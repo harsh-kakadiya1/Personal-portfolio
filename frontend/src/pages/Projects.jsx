@@ -72,7 +72,7 @@ export default function Projects() {
         tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
         image: "/images/projects/infinite-wiki-preview.png",
         github: "https://github.com/harsh-kakadiya1/INFINITE-WIKI",
-        live: "https://infinite-wikip.netlify.app/",
+        live: "https://infinite-wikipedia.netlify.app/",
         status: "completed"
       },
       {
