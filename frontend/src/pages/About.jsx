@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/navigation/Navbar';
 import { HeroTextPressure } from '../components/ui/hero-text-pressure';
+import { SocialStories } from '../components/ui/social-stories';
 import { useMobile } from '../hooks/useMobile';
 import LogoLoop from '../components/ui/LogoLoop';
 import BackToTop from '../components/ui/BackToTop';
@@ -90,15 +91,41 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          {/* Profile Picture */}
+          {/* Social Stories Profile Picture */}
           <div className="flex justify-center mb-8">
-            <div className="w-48 h-48 md:w-64 md:h-64 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full flex items-center justify-center border border-cyan-400/30 p-1">
-              <img 
-                src="/images/projects/profile.png" 
-                alt="Profile" 
-                className="w-full h-full object-cover rounded-full border-2 border-black/20"
-              />
-            </div>
+            <SocialStories 
+              stories={useMemo(() => [
+                {
+                  id: "1",
+                  platform: "linkedin",
+                  mediaUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+                  linkUrl: "https://www.linkedin.com/in/harsh-kakadiya",
+                  caption: "Building AI-powered solutions and modern web applications",
+                  duration: 5,
+                },
+                {
+                  id: "2",
+                  platform: "linkedin",
+                  mediaUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+                  linkUrl: "https://www.linkedin.com/in/harsh-kakadiya",
+                  caption: "Passionate about Machine Learning and Computer Vision",
+                  duration: 6,
+                },
+                {
+                  id: "3",
+                  platform: "GitHub",
+                  mediaUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+                  linkUrl: "https://github.com/harsh-kakadiya1",
+                  caption: "Check out my latest projects on GitHub!",
+                  duration: 5,
+                },
+              ], [])}
+              profile={useMemo(() => ({
+                name: "Harsh Kakadiya",
+                avatarUrl: "/images/projects/profile.png",
+              }), [])}
+              defaultDuration={5}
+            />
           </div>
           
           {/* Interactive Name */}

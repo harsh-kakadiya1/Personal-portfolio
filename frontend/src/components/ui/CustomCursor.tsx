@@ -60,27 +60,31 @@ const CustomCursor: React.FC = () => {
     return null;
   }
 
-  return (
-    <>
-      {/* Cursor dot */}
-      <div
-        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-        style={{
-          left: mousePosition.x - 4, // Center the 8px dot
-          top: mousePosition.y - 4,
-        }}
-      />
-      
-      {/* Cursor border */}
-      <div
-        className={`custom-cursor-border ${isHovering ? 'hover' : ''}`}
-        style={{
-          left: mousePosition.x - 20, // Center the 40px border
-          top: mousePosition.y - 20,
-        }}
-      />
-    </>
-  );
+  // Temporarily disabled - uncomment to re-enable
+  // return (
+  //   <>
+  //     {/* Cursor dot */}
+  //     <div
+  //       className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+  //       style={{
+  //         left: mousePosition.x - 4, // Center the 8px dot
+  //         top: mousePosition.y - 4,
+  //       }}
+  //     />
+  //     
+  //     {/* Cursor border */}
+  //     <div
+  //       className={`custom-cursor-border ${isHovering ? 'hover' : ''}`}
+  //       style={{
+  //         left: mousePosition.x - 20, // Center the 40px border
+  //         top: mousePosition.y - 20,
+  //       }}
+  //     />
+  //   </>
+  // );
+
+  // Disabled - return null
+  return null;
 };
 
 export default CustomCursor;
