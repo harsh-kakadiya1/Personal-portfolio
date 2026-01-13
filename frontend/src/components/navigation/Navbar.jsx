@@ -10,14 +10,18 @@ export default function Navbar() {
 
   const navItems = [
     { id: 'about', label: 'Harsh', icon: '◉', path: '/' },
+    { id: 'work', label: 'Work', icon: '◉', path: '/work' },
     { id: 'projects', label: 'Projects', icon: '▲', path: '/projects' },
     { id: 'playground', label: 'Playground', icon: '◈', path: '/playground' },
     { id: 'contact', label: 'Contact', icon: '✉', path: '/contact' }
   ];
 
+  // Filter out 'work' on mobile
+  const filteredNavItems = isMobile ? navItems.filter(item => item.id !== 'work') : navItems;
+
   const getCurrentPage = () => {
     const currentPath = location.pathname;
-    const currentItem = navItems.find(item => item.path === currentPath);
+    const currentItem = filteredNavItems.find(item => item.path === currentPath);
     return currentItem ? currentItem.id : 'about';
   };
 
@@ -32,7 +36,7 @@ export default function Navbar() {
     <nav className={`fixed ${isMobile ? 'top-2' : 'top-6'} left-1/2 transform -translate-x-1/2 z-50`}>
       <div className={`bg-black/30 backdrop-blur-sm border border-white/50 ${isMobile ? 'rounded-xl px-2 py-1' : 'rounded-2xl px-3 py-2'} shadow-2xl`}>
         <div className={`flex items-center ${isMobile ? 'gap-1' : 'gap-3'}`}>
-          {navItems.map((item) => (
+          {filteredNavItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavigation(item.path)}

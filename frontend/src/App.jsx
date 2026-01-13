@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/navigation/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import { Component as AnimatedBackground } from './components/ui/raycast-animated-blue-background';
 import { ThemeProvider } from './components/ui/theme-provider';
 import CustomCursor from './components/ui/CustomCursor';
@@ -10,6 +11,7 @@ import SnowEffect from './components/ui/SnowEffect';
 import SnowToggle from './components/ui/SnowToggle';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import Work from './pages/Work';
 import Playground from './pages/Playground';
 import Contact from './pages/Contact';
 
@@ -53,6 +55,7 @@ function App() {
       disableTransitionOnChange
     >
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-black text-white relative">
           {/* Global Animated Background - Covers All Pages */}
           <div className="fixed inset-0 z-0 w-full h-full">
@@ -71,6 +74,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
+                <Route path="/work" element={<Work />} />
                 <Route path="/playground" element={<Playground />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
