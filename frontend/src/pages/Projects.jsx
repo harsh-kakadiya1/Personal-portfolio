@@ -82,8 +82,8 @@ export default function Projects() {
         tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
         image: "/images/projects/nyayasetu.ai-preview.png",
         github: "https://github.com/harsh-kakadiya1/nyayasetu.AI",
-        live: "https://nyaya-setu-ai.netlify.app/",
-        status: "completed"
+        live: "https://nyayasetu-ai.vercel.app/",
+        status: "completed"   
       },
       {
         id: 7,
