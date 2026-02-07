@@ -2,22 +2,22 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FileText } from 'lucide-react';
 import { useMobile } from '../../hooks/useMobile';
+import { useProjectModal } from '../../contexts/ProjectModalContext';
 
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isMobile } = useMobile();
+  const { isProjectModalOpen } = useProjectModal();
 
   const navItems = [
     { id: 'about', label: 'Harsh', icon: '◉', path: '/' },
-    { id: 'work', label: 'Work', icon: '◉', path: '/work' },
     { id: 'projects', label: 'Projects', icon: '▲', path: '/projects' },
     { id: 'playground', label: 'Playground', icon: '◈', path: '/playground' },
     { id: 'contact', label: 'Contact', icon: '✉', path: '/contact' }
   ];
 
-  // Filter out 'work' on mobile
-  const filteredNavItems = isMobile ? navItems.filter(item => item.id !== 'work') : navItems;
+  const filteredNavItems = navItems;
 
   const getCurrentPage = () => {
     const currentPath = location.pathname;
@@ -33,7 +33,7 @@ export default function Navbar() {
   const currentPage = getCurrentPage();
 
   return (
-    <nav className={`fixed ${isMobile ? 'top-2' : 'top-6'} left-1/2 transform -translate-x-1/2 z-50`}>
+    <nav className={`fixed ${isMobile ? 'top-2' : 'top-6'} left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-200 ${isProjectModalOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
       <div className={`bg-black/30 backdrop-blur-sm border border-white/50 ${isMobile ? 'rounded-xl px-2 py-1' : 'rounded-2xl px-3 py-2'} shadow-2xl`}>
         <div className={`flex items-center ${isMobile ? 'gap-1' : 'gap-3'}`}>
           {filteredNavItems.map((item) => (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { ProjectModalProvider } from './contexts/ProjectModalContext';
 import Navbar from './components/navigation/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import { Component as AnimatedBackground } from './components/ui/raycast-animated-blue-background';
@@ -11,7 +12,6 @@ import SnowEffect from './components/ui/SnowEffect';
 import SnowToggle from './components/ui/SnowToggle';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Work from './pages/Work';
 import Playground from './pages/Playground';
 import Contact from './pages/Contact';
 
@@ -55,35 +55,36 @@ function App() {
       disableTransitionOnChange
     >
       <Router>
-        <ScrollToTop />
-        <div className="min-h-screen bg-black text-white relative">
-          {/* Global Animated Background - Covers All Pages */}
-          <div className="fixed inset-0 z-0 w-full h-full">
-            <AnimatedBackground />
-            {/* Subtle overlay for better content readability */}
-            <div className="absolute inset-0 bg-black/20"></div>
+        <ProjectModalProvider>
+          <ScrollToTop />
+          <div className="min-h-screen bg-black text-white relative">
+            {/* Global Animated Background - Covers All Pages */}
+            <div className="fixed inset-0 z-0 w-full h-full">
+              <AnimatedBackground />
+              {/* Subtle overlay for better content readability */}
+              <div className="absolute inset-0 bg-black/20"></div>
+            </div>
+            
+            {/* Snow Effect - Behind all content */}
+            <SnowEffect isActive={isSnowing} />
+            
+          <div className="relative z-10">
+            <Navbar />
+            <main className="pt-16 md:pt-20">
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={<About />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/playground" element={<Playground />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+              </AnimatePresence>
+            </main>
+            <CustomCursor />
+            <SnowToggle onToggle={setIsSnowing} />
           </div>
-          
-          {/* Snow Effect - Behind all content */}
-          <SnowEffect isActive={isSnowing} />
-          
-        <div className="relative z-10">
-          <Navbar />
-          <main className="pt-16 md:pt-20">
-            <AnimatePresence mode="wait">
-              <Routes>
-                <Route path="/" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/work" element={<Work />} />
-                <Route path="/playground" element={<Playground />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </AnimatePresence>
-          </main>
-          <CustomCursor />
-          <SnowToggle onToggle={setIsSnowing} />
-        </div>
-        </div>
+          </div>
+        </ProjectModalProvider>
       </Router>
     </ThemeProvider>
   );

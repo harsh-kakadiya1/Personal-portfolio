@@ -22,7 +22,7 @@ export default function SnowEffect({ isActive }) {
       return;
     }
 
-    // Create snowflakes with different sizes
+    // Create snowflakes with different sizes and staggered timing so there's no gap
     const createSnowflake = (id) => {
       const size = Math.random() < 0.33 ? 'small' : Math.random() < 0.66 ? 'medium' : 'large';
       const sizeMap = {
@@ -30,19 +30,21 @@ export default function SnowEffect({ isActive }) {
         medium: { width: '8px', height: '8px', opacity: 0.8 },
         large: { width: '12px', height: '12px', opacity: 1 }
       };
-
+      const duration = 12 + Math.random() * 28; // 12–40 seconds, wide spread
+      // Stagger delay across the full cycle so flakes are never all resetting at once
+      const delay = Math.random() * duration;
       return {
         id,
         left: Math.random() * 100,
-        delay: Math.random() * 5,
-        duration: 10 + Math.random() * 20, // 10-30 seconds
+        delay,
+        duration,
         size: sizeMap[size],
         drift: (Math.random() - 0.5) * 50 // Horizontal drift
       };
     };
 
-    // Generate 50 snowflakes
-    const flakes = Array.from({ length: 50 }, (_, i) => createSnowflake(i));
+    // More flakes + staggered timing = continuous snow with no gap
+    const flakes = Array.from({ length: 80 }, (_, i) => createSnowflake(i));
     setSnowflakes(flakes);
   }, [isActive]);
 
