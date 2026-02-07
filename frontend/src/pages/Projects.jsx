@@ -49,35 +49,79 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 3,
+      title: "DataMimic.io",
+      description: "DataMimic.io is a comprehensive data platform combining synthetic data generation with advanced EDA and preprocessing tools for developers, researchers, and data scientists.",
+      tech: ["Python", "Flask", "Pandas", "NumPy", "Scikit-learn", "Faker", "Bootstrap 5", "JavaScript"],
+      image: "/images/projects/datamimic-preview.png",
+      github: "https://github.com/harsh-kakadiya1/DataMimic.io",
+      live: "https://datamimic-io.onrender.com/",
+      status: "completed",
+      moreAbout: "DataMimic.io is the ultimate data science platform that revolutionizes how you work with data. We've created a seamless ecosystem where synthetic data generation meets advanced exploratory data analysis (EDA) and intelligent preprocessing – all in one powerful, intuitive interface.\n\nBuilt for the modern data professional, DataMimic.io eliminates the complexity of juggling multiple tools and platforms. Whether you're prototyping machine learning models, conducting research, or building production applications, our platform accelerates your workflow from data creation to insights."
+    },
+    {
+      id: 11,
+      title: "MetaFlow: Metadata-Driven AI Agent for ML Pipeline Designing",
+      description: "Build an AI agent that reads dataset metadata to architect, write, and execute a complete ML pipeline.",
+      tech: ["Python", "Pandas", "NumPy", "LangChain", "Pydantic", "Flask"],
+      image: "/images/projects/metaflow.png",
+      github: "#",
+      live: "#",
+      status: "in-progress",
+      moreAbout: "• Automate the transition from a raw CSV to a runnable .ipynb notebook.\n• Reason through metadata (not raw rows) to ensure data privacy and statistical accuracy.\n• Provide a \"Self-Correcting\" feedback loop where the agent audits its own code before delivery."
+    },
+    {
+      id: 6,
+      title: "nyayasetu.AI ",
+      description: "NyayaSetu AI is designed to demystify legal documents. It provides multi-language insights, students, and small business owners to interpret and act on their legal documents confidently—without needing a lawyer for the initial review.",
+      tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
+      image: "/images/projects/nyayasetu.ai-preview.png",
+      github: "https://github.com/harsh-kakadiya1/nyayasetu.AI",
+      live: "https://nyayasetu-ai.vercel.app/",
+      status: "completed",
+      moreAbout: "Instant summaries — Get plain-language summaries of complex legal documents in seconds. No more struggling with legal jargon.\n\nAI-powered risk analysis — Identify potential risks, unusual terms, and key clauses automatically using advanced AI algorithms.\n\nClause breakdown — See original and simplified versions of important contract clauses with detailed explanations.\n\nAccessible for everyone — Designed for both legal professionals and everyday users with an intuitive, user-friendly interface."
+    },
+    {
+      id: 10,
+      title: "The JARVIS - Personal AI Agent for the Laptop",
+      description: "A personal AI agent for your laptop that performs routine tasks, helps with productivity, and provides day-to-day assistance.",
+      tech: ["Python", "AI", "Automation"],
+      image: "/images/projects/jarvis.png",
+      github: "#",
+      live: "https://www.linkedin.com/posts/harsh-kakadiya_aiagent-personalai-jarvis-activity-7362175889553485824-gPAD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEU9MpABA9XLjqwwCkwuFC5otNvJzf2xdo4",
+      status: "completed",
+      moreAbout: "JARVIS is like an IoT-enabled Alexa for your laptop—it does what you say, right on your machine.\n\n• Routine & productivity: Handles day-to-day tasks, writes emails and applications on command.\n• Media control: Generate images and see them instantly; play any YouTube video by saying \"play this\"; navigate next/previous while browsing photos in the gallery.\n• System control: Open any file or play any video stored on your laptop with voice.\n• Real-time answers: Get live weather, stock prices, or any real-time question answered on the spot.\n• Memory: Remembers the conversation so you can have a continuous, context-aware assistant experience."
+    },
+    {
+      id: 2,
+      title: "StyleMe - Fashion Stylist",
+      description: "StyleMe is a Flutter-based mobile application designed to be your personal fashion assistant, Organize and manage your clothing items in one place.",
+      tech: ["Flutter", "Dart"],
+      image: "/images/projects/styleme-preview.png",
+      github: "https://github.com/harsh-kakadiya1/StyleMe--Your-Personal-AI-Fashion-Stylist",
+      live: "https://drive.google.com/file/d/1cEGu5loU0iYGm8pfTZFS5jb9EX4E9Pbe/view?usp=drivesdk",
+      status: "completed",
+      moreAbout: "Release history\n• v0.1.0 — Simple basic app with core styling features.\n• v0.1.1 — Calendar/scheduler for planning and saving outfits.\n• v0.1.2 — Enhanced profile with tags and favorites.\n\nFeatures\n• Wardrobe management — Organize and manage your clothing items in one place.\n• Outfit pairing — Create and save perfect outfit combinations.\n• Calendar scheduling — Plan your outfits in advance for any day or event.\n• Profile & preferences — Customize your style profile and preferences.\n• Favorites & tags — Mark favorite outfits and organize them with tags."
+    },
+    {
       id: 1,
       title: "personal portfolio",
-      description: "Interactive portfolio with modern UI and smooth animation styles and responsive design",
+      description: "my personal portfolio website with interactive portfolio with modern UI and smooth animation styles, responsive design, project showcase and resume, contact me section and more features.",
       tech: ["React", "Framer Motion", "Node.js"],
       image: "/images/projects/portfolio-preview.png",
-      github: "https://github.com/harsh-kakadiya1/portfolio",
+      github: "https://github.com/harsh-kakadiya1/portfolio", 
       live: "https://harsh-kakadiya.vercel.app/",
       status: "completed",
       moreAbout: ""
     },
     {
-        id: 2,
-        title: "StyleMe - Fashion Stylist",
-        description: "StyleMe is a Flutter-based mobile application designed to be your personal fashion assistant.",
-        tech: ["Flutter", "Dart"],
-        image: "/images/projects/styleme-preview.png",
-        github: "https://github.com/harsh-kakadiya1/StyleMe--Your-Personal-AI-Fashion-Stylist",
-        live: "https://drive.google.com/file/d/1cEGu5loU0iYGm8pfTZFS5jb9EX4E9Pbe/view?usp=drivesdk",
-        status: "in-progress",
-        moreAbout: ""
-      },
-    {
-      id: 3,
-      title: "DataMimic.io",
-      description: "Advanced Synthetic Data Generation & No-Code EDA/Pre-processing Platform",
-      tech: ["Python", "Flask", "Pandas", "NumPy", "Scikit-learn", "Faker", "Bootstrap 5", "JavaScript"],
-      image: "/images/projects/datamimic-preview.png",
-      github: "https://github.com/harsh-kakadiya1/DataMimic.io",
-      live: "https://datamimic-io.onrender.com/",
+      id: 5,
+      title: "INFINITE-WIKI",
+      description: "An AI-powered encyclopedia application that generates encyclopedia-style definitions and ASCII art visualizations for any topic using Google's Gemini 2.5 Flash API.",
+      tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
+      image: "/images/projects/infinite-wiki-preview.png",
+      github: "https://github.com/harsh-kakadiya1/INFINITE-WIKI",
+      live: "https://infinite-wikipedia.netlify.app/",
       status: "completed",
       moreAbout: ""
     },
@@ -93,28 +137,6 @@ export default function Projects() {
       moreAbout: ""
     },
       {
-        id: 5,
-        title: "INFINITE-WIKI",
-        description: "An AI-powered encyclopedia application that generates encyclopedia-style definitions and ASCII art visualizations for any topic using Google's Gemini 2.5 Flash API.",
-        tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
-        image: "/images/projects/infinite-wiki-preview.png",
-        github: "https://github.com/harsh-kakadiya1/INFINITE-WIKI",
-        live: "https://infinite-wikipedia.netlify.app/",
-        status: "completed",
-        moreAbout: ""
-      },
-      {
-        id: 6,
-        title: "nyayasetu.AI ",
-        description: "NyayaSetu AI is designed to demystify legal documents. It provides multi-language insights, students, and small business owners to interpret and act on their legal documents confidently—without needing a lawyer for the initial review.",
-        tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
-        image: "/images/projects/nyayasetu.ai-preview.png",
-        github: "https://github.com/harsh-kakadiya1/nyayasetu.AI",
-        live: "https://nyayasetu-ai.vercel.app/",
-        status: "completed",
-        moreAbout: ""   
-      },
-      {
         id: 7,
         title: "Hand Gesture Filter",
         description: "This Python application uses your webcam and hand gestures to apply real-time image filters to a selected region of the video feed.",
@@ -122,17 +144,6 @@ export default function Projects() {
         image: "/images/projects/hand-gesture-filter-preview.png",
         github: "https://github.com/harsh-kakadiya1/computer-vision/tree/main/Vision-Gestures",
         live: "https://www.linkedin.com/posts/harsh-kakadiya_python-computervision-handtracking-activity-7367994305652744192-lGPR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEU9MpABA9XLjqwwCkwuFC5otNvJzf2xdo4",
-        status: "completed",
-        moreAbout: ""
-      },
-      {
-        id: 8,
-        title: "Face Recognition Studio",
-        description: "Face Recognition Studio is a modern, responsive web UI for an AI-powered face matching and recognition system.",
-        tech: ["HTML5","CSS3","Vanilla JavaScript"],
-        image: "/images/projects/face-recognition-studio-preview.png",
-        github: "https://github.com/harsh-kakadiya1/FaceReco-Studio",
-        live: "https://facerec-studio.netlify.app/home",
         status: "completed",
         moreAbout: ""
       },
@@ -148,15 +159,15 @@ export default function Projects() {
         moreAbout: ""
       },
       {
-        id: 10,
-        title: "The JARVIS - Personal AI Agent for the Laptop",
-        description: "A personal AI agent for your laptop that performs routine tasks, helps with productivity, and provides day-to-day assistance.",
-        tech: ["Python", "AI", "Automation"],
-        image: "/images/projects/jarvis.png",
-        github: "#",
-        live: "https://www.linkedin.com/posts/harsh-kakadiya_aiagent-personalai-jarvis-activity-7362175889553485824-gPAD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEU9MpABA9XLjqwwCkwuFC5otNvJzf2xdo4",
+        id: 8,
+        title: "Face Recognition Studio",
+        description: "Face Recognition Studio is a modern, responsive web UI for an AI-powered face matching and recognition system.",
+        tech: ["HTML5","CSS3","Vanilla JavaScript"],
+        image: "/images/projects/face-recognition-studio-preview.png",
+        github: "https://github.com/harsh-kakadiya1/FaceReco-Studio",
+        live: "https://facerec-studio.netlify.app/home",
         status: "completed",
-        moreAbout: "JARVIS is like an IoT-enabled Alexa for your laptop—it does what you say, right on your machine.\n\n• Routine & productivity: Handles day-to-day tasks, writes emails and applications on command.\n• Media control: Generate images and see them instantly; play any YouTube video by saying \"play this\"; navigate next/previous while browsing photos in the gallery.\n• System control: Open any file or play any video stored on your laptop with voice.\n• Real-time answers: Get live weather, stock prices, or any real-time question answered on the spot.\n• Memory: Remembers the conversation so you can have a continuous, context-aware assistant experience."
+        moreAbout: ""
       },
   ];
 
@@ -236,20 +247,22 @@ export default function Projects() {
 
                 {/* Action Buttons - stopPropagation so clicking them doesn't open modal */}
                 <div className={`flex ${isMobile ? 'flex-col gap-2' : 'gap-4'}`}>
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-black/20 backdrop-blur-sm text-white px-4 rounded-lg font-medium transition-all hover:bg-black/40 border border-white/20 text-center flex items-center justify-center gap-2`}
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                    </svg>
-                    GitHub
-                  </motion.a>
+                  {project.github !== '#' && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-black/20 backdrop-blur-sm text-white px-4 rounded-lg font-medium transition-all hover:bg-black/40 border border-white/20 text-center flex items-center justify-center gap-2`}
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                      </svg>
+                      GitHub
+                    </motion.a>
+                  )}
                   {project.live !== '#' && (
                     <motion.a
                       href={project.live}
@@ -354,19 +367,21 @@ export default function Projects() {
 
                   {/* Actions - GitHub & Live Demo */}
                   <div className={`flex ${isMobile ? 'flex-col gap-3' : 'gap-4'}`}>
-                    <motion.a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`${isMobile ? 'w-full py-3' : 'flex-1 py-3'} bg-black/40 border border-white/20 text-white px-4 rounded-xl font-medium text-center flex items-center justify-center gap-2 hover:bg-white/10 transition-colors`}
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                      </svg>
-                      GitHub
-                    </motion.a>
+                    {selectedProject.github !== '#' && (
+                      <motion.a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`${isMobile ? 'w-full py-3' : 'flex-1 py-3'} bg-black/40 border border-white/20 text-white px-4 rounded-xl font-medium text-center flex items-center justify-center gap-2 hover:bg-white/10 transition-colors`}
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                        </svg>
+                        GitHub
+                      </motion.a>
+                    )}
                     {selectedProject.live !== '#' && (
                       <motion.a
                         href={selectedProject.live}
