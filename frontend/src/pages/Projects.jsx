@@ -49,6 +49,19 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 12,
+      title: "Thoondil — AI Chatbot for Fish Sellers & Consumers",
+      description: "Multi-language AI-powered chatbot for the Thoondil app, assisting fish consumers and retailers. Designed and developed as AI Developer at Thoondil Fish Services.",
+      tech: ["AI", "Chatbot", "Python"],
+      image: "/images/projects/thoondil.png",
+      github: "#",
+      live: "https://drive.google.com/drive/folders/1HoQNg2ymLnAKkZA5Z6tl2ueHGnKZ5F7k?usp=sharing",
+      liveLabel: "View my work",
+      status: "completed",
+      badge: "Professional",
+      moreAbout: "Role: AI Developer\nCompany: Thoondil Fish Services, Moongilthuraipattu, Tamil Nadu, India (Remote)\nDuration: Sep 2025 – Dec 2025 (4 months)\n\nDesign and development of a multi-language AI-powered chatbot to assist fish consumers and retailers within the Thoondil app. Real product currently in development; my contribution covers the full design and build of the chatbot experience.\n\nBackend developed in Node.js and connected to the Flutter app."
+    },
+    {
       id: 3,
       title: "DataMimic.io",
       description: "DataMimic.io is a comprehensive data platform combining synthetic data generation with advanced EDA and preprocessing tools for developers, researchers, and data scientists.",
@@ -212,6 +225,14 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
+                {/* Professional / Internship badge */}
+                {project.badge && (
+                  <div className={`absolute ${isMobile ? 'top-2 left-2' : 'top-3 left-3'}`}>
+                    <span className="bg-blue-500/20 text-blue-400 border-blue-500/30 px-2 py-1 rounded-full text-xs font-medium border backdrop-blur-sm">
+                      {project.badge}
+                    </span>
+                  </div>
+                )}
                 {/* Status Badge */}
                 <div className={`absolute ${isMobile ? 'top-2 right-2' : 'top-3 right-3'}`}>
                   <span className={`${
@@ -276,7 +297,7 @@ export default function Projects() {
                       <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                      Live Demo
+                      {project.liveLabel || "Live Demo"}
                     </motion.a>
                   )}
                 </div>
@@ -326,10 +347,15 @@ export default function Projects() {
                     />
                   </div>
 
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-4 flex-wrap">
                     <h2 className="text-2xl md:text-3xl font-bold text-white pr-10">
                       {selectedProject.title}
                     </h2>
+                    {selectedProject.badge && (
+                      <span className="shrink-0 px-3 py-1 rounded-full text-xs font-medium border bg-blue-500/20 text-blue-400 border-blue-500/30">
+                        {selectedProject.badge}
+                      </span>
+                    )}
                     <span className={`shrink-0 px-3 py-1 rounded-full text-xs font-medium border ${
                       selectedProject.status === 'completed'
                         ? 'bg-green-500/20 text-green-400 border-green-500/30'
@@ -394,7 +420,7 @@ export default function Projects() {
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                        Live Demo
+                        {selectedProject.liveLabel || "Live Demo"}
                       </motion.a>
                     )}
                   </div>

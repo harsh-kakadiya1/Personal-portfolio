@@ -13,6 +13,7 @@ export default function Navbar() {
   const navItems = [
     { id: 'about', label: 'Harsh', icon: '◉', path: '/' },
     { id: 'projects', label: 'Projects', icon: '▲', path: '/projects' },
+    { id: 'research', label: 'Research', icon: '▣', path: '/research' },
     { id: 'playground', label: 'Playground', icon: '◈', path: '/playground' },
     { id: 'contact', label: 'Contact', icon: '✉', path: '/contact' }
   ];

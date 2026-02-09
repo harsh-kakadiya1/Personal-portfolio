@@ -12,6 +12,7 @@ import SnowEffect from './components/ui/SnowEffect';
 import SnowToggle from './components/ui/SnowToggle';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import Research from './pages/Research';
 import Playground from './pages/Playground';
 import Contact from './pages/Contact';
 
@@ -75,6 +76,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<About />} />
                   <Route path="/projects" element={<Projects />} />
+                  <Route path="/research" element={<Research />} />
                   <Route path="/playground" element={<Playground />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
