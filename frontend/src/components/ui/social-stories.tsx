@@ -38,7 +38,7 @@ export function SocialStories({
   const [isPaused, setIsPaused] = useState(false)
   const [isMediaReady, setIsMediaReady] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const [showHint, setShowHint] = useState(true)
+  
 
   const activeProgressBarRef = useRef<HTMLDivElement | null>(null)
   const rafRef = useRef<number | null>(null)
@@ -57,16 +57,7 @@ export function SocialStories({
     setMounted(true)
   }, [])
 
-  // Auto-hide hint after 5 seconds
-  useEffect(() => {
-    if (!showHint) return
-    
-    const timer = setTimeout(() => {
-      setShowHint(false)
-    }, 5000) // 5 seconds
-
-    return () => clearTimeout(timer)
-  }, [showHint])
+  
 
   // -- Progress & Animation Logic --
   const setProgress = (value: number) => {
@@ -201,7 +192,6 @@ export function SocialStories({
               layoutId="story-trigger"
               onClick={() => {
                 setIsOpen(true)
-                setShowHint(false)
               }}
               className="absolute inset-0 rounded-full p-[4px]"
               whileHover={{ scale: 1.05 }}
@@ -220,79 +210,7 @@ export function SocialStories({
               </div>
             </motion.div>
 
-            {/* Informative Hint - Hand-drawn style */}
-            {showHint && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
-                className="absolute left-full ml-13 top-1/2 -translate-y-1/2 hidden md:block pointer-events-none"
-                style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
-              >
-                {/* Hand-drawn curved arrow SVG */}
-                <svg
-                  width="120"
-                  height="80"
-                  viewBox="0 0 120 80"
-                  className="absolute -left-20 top-1/2"
-                  style={{ transform: 'translateY(-60%) rotate(-10deg)' }}
-                >
-                  <path
-                    d="M 10 40 Q 30 20, 50 30 T 90 35"
-                    stroke="white"
-                    strokeWidth="3"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    style={{
-                      filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.5))',
-                      strokeDasharray: '4,2'
-                    }}
-                  />
-                  {/* Arrowhead */}
-                  <path
-                    d="M 85 32 L 90 35 L 87 38"
-                    stroke="white"
-                    strokeWidth="3"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    style={{ filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.5))' }}
-                  />
-                </svg>
-                
-                {/* Hand-drawn text */}
-                <div className="relative">
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7, duration: 0.4 }}
-                    className="text-white text-base font-semibold whitespace-nowrap"
-                    style={{
-                      fontFamily: 'cursive, "Comic Sans MS", "Marker Felt", sans-serif',
-                      textShadow: '2px 2px 4px rgba(0,0,0,0.5), 0 0 8px rgba(255,255,255,0.3)',
-                      transform: 'rotate(-2deg)',
-                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))'
-                    }}
-                  >
-                    click there !!!
-                  </motion.div>
-                  
-                  {/* Close hint button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setShowHint(false)
-                    }}
-                    className="absolute -top-6 -right-2 w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors pointer-events-auto z-10"
-                    style={{ transform: 'rotate(2deg)' }}
-                  >
-                    <X className="w-3.5 h-3.5 text-white" />
-                  </button>
-                </div>
-              </motion.div>
-            )}
+            {/* Hint removed per user request */}
           </>
         )}
       </div>
