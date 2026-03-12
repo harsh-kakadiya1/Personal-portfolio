@@ -75,17 +75,6 @@ export default function Projects() {
       moreAbout: "Developed and published a lightweight preprocessing library on PyPI, reducing boilerplate code by 80%.\nSaved developers 2+ hours per project by automating data cleaning, outlier detection, and scaling.\n\nInstall via pip:\npip install autosweep-preprocessing\n\nUsage:\nfrom autosweep_preprocessing import AutoSweep\n\nresult = AutoSweep(\n    file_path=\"data.csv\",\n    target_column=\"target\",\n    encode_categorical=\"onehot\",\n    remove_correlated=True,\n    structured_output=True,\n)\n\nX = result[\"X\"]\ny = result[\"y\"]\ninfo = result[\"info\"]\n\nAutosweep supports:\n• CSV/Excel loading\n• Missing value handling and imputation\n• Numeric scaling (standard, minmax, robust)\n• Categorical encoding (onehot, ordinal, label)\n• Optional datetime feature extraction\n• Optional outlier handling (iqr, zscore)\n• Optional correlation and low-variance filtering\n• Structured output for pipeline diagnostics"
     },
     {
-      id: 3,
-      title: "DataMimic.io",
-      description: "DataMimic.io is a comprehensive data platform combining synthetic data generation with advanced EDA and preprocessing tools for developers, researchers, and data scientists.",
-      tech: ["Python", "Flask", "Pandas", "NumPy", "Scikit-learn", "Faker", "Bootstrap 5", "JavaScript"],
-      image: "/images/projects/datamimic-preview.png",
-      github: "https://github.com/harsh-kakadiya1/DataMimic.io",
-      live: "https://datamimic-io.onrender.com/",
-      status: "completed",
-      moreAbout: "DataMimic.io is the ultimate data science platform that revolutionizes how you work with data. We've created a seamless ecosystem where synthetic data generation meets advanced exploratory data analysis (EDA) and intelligent preprocessing – all in one powerful, intuitive interface.\n\nBuilt for the modern data professional, DataMimic.io eliminates the complexity of juggling multiple tools and platforms. Whether you're prototyping machine learning models, conducting research, or building production applications, our platform accelerates your workflow from data creation to insights."
-    },
-    {
       id: 11,
       title: "MetaFlow: Metadata-Driven AI Agent for ML Pipeline Designing",
       description: "Build an AI agent that reads dataset metadata to architect, write, and execute a complete ML pipeline.",
@@ -95,6 +84,17 @@ export default function Projects() {
       live: "#",
       status: "in-progress",
       moreAbout: "• Automate the transition from a raw CSV to a runnable .ipynb notebook.\n• Reason through metadata (not raw rows) to ensure data privacy and statistical accuracy.\n• Provide a \"Self-Correcting\" feedback loop where the agent audits its own code before delivery."
+    },
+    {
+      id: 3,
+      title: "DataMimic.io",
+      description: "DataMimic.io is a comprehensive data platform combining synthetic data generation with advanced EDA and preprocessing tools for developers, researchers, and data scientists.",
+      tech: ["Python", "Flask", "Pandas", "NumPy", "Scikit-learn", "Faker", "Bootstrap 5", "JavaScript"],
+      image: "/images/projects/datamimic-preview.png",
+      github: "https://github.com/harsh-kakadiya1/DataMimic.io",
+      live: "https://datamimic-io.onrender.com/",
+      status: "completed",
+      moreAbout: "DataMimic.io is the ultimate data science platform that revolutionizes how you work with data. We've created a seamless ecosystem where synthetic data generation meets advanced exploratory data analysis (EDA) and intelligent preprocessing – all in one powerful, intuitive interface.\n\nBuilt for the modern data professional, DataMimic.io eliminates the complexity of juggling multiple tools and platforms. Whether you're prototyping machine learning models, conducting research, or building production applications, our platform accelerates your workflow from data creation to insights."
     },
     {
       id: 6,
