@@ -62,6 +62,19 @@ export default function Projects() {
       moreAbout: "Role: AI Developer\nCompany: Thoondil Fish Services, Moongilthuraipattu, Tamil Nadu, India (Remote)\nDuration: Sep 2025 – Dec 2025 (4 months)\n\nDesign and development of a multi-language AI-powered chatbot to assist fish consumers and retailers within the Thoondil app. Real product currently in development; my contribution covers the full design and build of the chatbot experience.\n\nBackend developed in Node.js and connected to the Flutter app."
     },
     {
+      id: 13,
+      title: "AutoSweep",
+      description: "A lightweight, published Python preprocessing library on PyPI that automates data cleaning, outlier detection, and scaling through a single flexible API — reducing boilerplate code by 80%.",
+      tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "PyPI"],
+      image: "/images/projects/autosweep-preview.png",
+      github: "#",
+      live: "https://pypi.org/project/autosweep-preprocessing/",
+      liveLabel: "View on PyPI",
+      status: "completed",
+      badge: "Published PyPI Package",
+      moreAbout: "Developed and published a lightweight preprocessing library on PyPI, reducing boilerplate code by 80%.\nSaved developers 2+ hours per project by automating data cleaning, outlier detection, and scaling.\n\nInstall via pip:\npip install autosweep-preprocessing\n\nUsage:\nfrom autosweep_preprocessing import AutoSweep\n\nresult = AutoSweep(\n    file_path=\"data.csv\",\n    target_column=\"target\",\n    encode_categorical=\"onehot\",\n    remove_correlated=True,\n    structured_output=True,\n)\n\nX = result[\"X\"]\ny = result[\"y\"]\ninfo = result[\"info\"]\n\nAutosweep supports:\n• CSV/Excel loading\n• Missing value handling and imputation\n• Numeric scaling (standard, minmax, robust)\n• Categorical encoding (onehot, ordinal, label)\n• Optional datetime feature extraction\n• Optional outlier handling (iqr, zscore)\n• Optional correlation and low-variance filtering\n• Structured output for pipeline diagnostics"
+    },
+    {
       id: 3,
       title: "DataMimic.io",
       description: "DataMimic.io is a comprehensive data platform combining synthetic data generation with advanced EDA and preprocessing tools for developers, researchers, and data scientists.",
@@ -225,10 +238,14 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
-                {/* Professional / Internship badge */}
+                {/* Professional / Internship / PyPI badge */}
                 {project.badge && (
                   <div className={`absolute ${isMobile ? 'top-2 left-2' : 'top-3 left-3'}`}>
-                    <span className="bg-blue-500/20 text-blue-400 border-blue-500/30 px-2 py-1 rounded-full text-xs font-medium border backdrop-blur-sm">
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${
+                      project.badge === 'Published PyPI Package'
+                        ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+                        : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                    }`}>
                       {project.badge}
                     </span>
                   </div>
@@ -352,7 +369,11 @@ export default function Projects() {
                       {selectedProject.title}
                     </h2>
                     {selectedProject.badge && (
-                      <span className="shrink-0 px-3 py-1 rounded-full text-xs font-medium border bg-blue-500/20 text-blue-400 border-blue-500/30">
+                      <span className={`shrink-0 px-3 py-1 rounded-full text-xs font-medium border ${
+                        selectedProject.badge === 'Published PyPI Package'
+                          ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+                          : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                      }`}>
                         {selectedProject.badge}
                       </span>
                     )}
