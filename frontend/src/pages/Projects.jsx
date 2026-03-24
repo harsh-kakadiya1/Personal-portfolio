@@ -184,17 +184,6 @@ export default function Projects() {
         status: "in-progress",
         moreAbout: ""
       },
-      {
-        id: 8,
-        title: "Face Recognition Studio",
-        description: "Face Recognition Studio is a modern, responsive web UI for an AI-powered face matching and recognition system.",
-        tech: ["HTML5","CSS3","Vanilla JavaScript"],
-        image: "/images/projects/face-recognition-studio-preview.png",
-        github: "https://github.com/harsh-kakadiya1/FaceReco-Studio",
-        live: "https://facerec-studio.netlify.app/home",
-        status: "completed",
-        moreAbout: ""
-      },
   ];
 
   return (

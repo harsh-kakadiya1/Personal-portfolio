@@ -15,19 +15,27 @@ export default function Playground() {
       name: 'Harsh Kakadiya',
       avatar: 'https://github.com/harsh-kakadiya1.png',
       bio: 'Maybe i am having your DATA 😉',
-      followers: 12,
-      following: 8,
-      publicRepos: 20,
+      followers: 14,
+      following: 11,
+      publicRepos: 30,
       stars: 40,
     },
     stats: {
-      followers: 12,
-      following: 8,
+      followers: 14,
+      following: 11,
       stars: '40+',
-      repositories: '22',
-      contributions: '400+',
+      repositories: '30',
+      contributions: '660+',
     },
     featuredRepos: [
+      {
+        name: 'AI-Agent-for-designing-ML-pipelines',
+        description: 'AI Powered ML Pipeline Automation',
+        stars: 2,
+        forks: 0,
+        language: 'python',
+        url: 'https://github.com/juliKyada/AI-Agent-for-designing-ML-pipeline'
+      },
       {
         name: 'DataMimic.io',
         description: 'Advanced Synthetic Data Generation & No-Code EDA/Pre-processing Platform',
@@ -44,14 +52,6 @@ export default function Playground() {
         language: 'TypeScript',
         url: 'https://github.com/harsh-kakadiya1/nyayasetu.AI'
       },
-      {
-        name: 'StyleMe',
-        description: 'AI Fashion Stylist mobile application',
-        stars: 1,
-        forks: 0,
-        language: 'Dart',
-        url: 'https://github.com/harsh-kakadiya1/StyleMe--Your-Personal-AI-Fashion-Stylist'
-      }
     ]
   };
 
