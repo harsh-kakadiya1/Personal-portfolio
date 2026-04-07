@@ -4,6 +4,8 @@ import { useResumeModal } from '../contexts/ResumeModalContext';
 
 export default function ResumeModal() {
   const { isResumeModalOpen, setIsResumeModalOpen } = useResumeModal();
+  const resumeVersion = import.meta.env.VITE_RESUME_VERSION || '2026-04-07';
+  const resumeUrl = `/resume.pdf?v=${encodeURIComponent(resumeVersion)}`;
 
   if (!isResumeModalOpen) return null;
 
@@ -26,14 +28,14 @@ export default function ResumeModal() {
         </div>
         <div className="w-full h-[70vh] mb-4">
           <iframe
-            src="/resume.pdf"
+            src={resumeUrl}
             className="w-full h-full border border-white/20 rounded-lg"
             title="Resume Preview"
           />
         </div>
         <div className="text-center">
           <motion.a
-            href="/resume.pdf"
+            href={resumeUrl}
             download="Harsh_Kakadiya_Resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
