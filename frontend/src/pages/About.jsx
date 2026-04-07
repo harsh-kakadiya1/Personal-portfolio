@@ -48,6 +48,13 @@ export default function About() {
 
   const experience = [
     {
+      role: "Founding Full-Stack Developer / CTO",
+      company: "Pharmacophore, India",
+      period: "Mar 2025 - Present",
+      description: "Built the company website from scratch and owned end-to-end technical direction for the startup, including architecture, UI implementation, deployment, hosting, domain setup, and production launch. Delivered and continue to maintain the live site with full-stack and DevOps ownership.",
+      siteUrl: "https://pharmacophore.in/"
+    },
+    {
       role: "AI Developer",
       company: "Thoondil Fish Services, moongilthuraipattu, Tamil Nadu, India (Remote)",
       period: "Sep 2025 - Dec 2025 (4 months)",
@@ -285,6 +292,18 @@ export default function About() {
                         <p className="text-cyan-400 font-medium mb-1">{exp.company}</p>
                         <p className="text-gray-400 text-sm mb-3">{exp.period}</p>
                         <p className="text-gray-300 text-sm leading-relaxed mb-3">{exp.description}</p>
+                        {exp.siteUrl && (
+                          <motion.a
+                            href={exp.siteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="inline-flex items-center gap-2 rounded-md border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-medium text-cyan-300 transition-colors hover:bg-cyan-500/20 hover:border-cyan-300/60"
+                          >
+                            View Site
+                          </motion.a>
+                        )}
                       </div>
                     </div>
                   </motion.div>

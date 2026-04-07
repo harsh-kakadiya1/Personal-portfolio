@@ -49,6 +49,19 @@ export default function Projects() {
 
   const projects = [
     {
+      id: 14,
+      title: "Pharmacophore Website ",
+      description: "End-to-end startup website delivered from scratch, covering product vision to production launch. I designed and developed the full experience, translated business goals into a scalable web architecture, and ensured a smooth, high-performance deployment pipeline.",
+      tech: ["React", "JavaScript", "UI/UX", "Deployment", "DevOps"],
+      image: "/images/projects/pharma.png",
+      github: "#",
+      live: "https://pharmacophore.in/",
+      liveLabel: "Visit Website",
+      status: "completed",
+      badge: "Professional",
+      moreAbout: "Developed the entire website from scratch for a startup brand and owned the project lifecycle from planning to launch.\n\nKey contributions:\n• Built a complete, responsive frontend experience with a strong focus on clarity, usability, and brand consistency.\n• Led technical direction for the web presence, including architecture decisions, implementation standards, and production-readiness.\n• Handled deployment and hosting setup independently, including domain configuration, release flow, and launch execution.\n• Optimized delivery to ensure a stable production rollout and maintainability for future updates.\n\nOutcome:\nDelivered and actively maintained the live production site with full-stack and DevOps ownership."
+    },
+    {
       id: 12,
       title: "Thoondil — AI Chatbot for Fish Sellers & Consumers",
       description: "Multi-language AI-powered chatbot for the Thoondil app, assisting fish consumers and retailers. Designed and developed as AI Developer at Thoondil Fish Services.",
@@ -218,7 +231,7 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               onClick={() => openModal(project)}
-              className={`bg-black/30 backdrop-blur-sm border border-white/20 ${isMobile ? 'rounded-xl p-4' : 'rounded-2xl p-6'} hover:border-cyan-400/50 transition-all duration-300 group cursor-pointer`}
+              className={`bg-black/30 backdrop-blur-sm border border-white/20 ${isMobile ? 'rounded-xl p-4' : 'rounded-2xl p-6'} hover:border-cyan-400/50 transition-all duration-300 group cursor-pointer flex h-full flex-col`}
             >
               {/* Project Image */}
               <div className={`${isMobile ? 'h-40 mb-4' : 'h-48 mb-6'} bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-lg overflow-hidden relative`}>
@@ -252,7 +265,7 @@ export default function Projects() {
               </div>
 
               {/* Project Info - short description on card */}
-              <div>
+              <div className="flex flex-1 flex-col">
                 <h3 className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-white ${isMobile ? 'mb-2' : 'mb-3'} group-hover:text-cyan-400 transition-colors`}>
                   {project.title}
                 </h3>
@@ -273,7 +286,7 @@ export default function Projects() {
                 </div>
 
                 {/* Action Buttons - stopPropagation so clicking them doesn't open modal */}
-                <div className={`flex ${isMobile ? 'flex-col gap-2' : 'gap-4'}`}>
+                <div className={`mt-auto flex ${isMobile ? 'flex-col gap-2' : 'gap-4'}`}>
                   {project.github !== '#' && (
                     <motion.a
                       href={project.github}
