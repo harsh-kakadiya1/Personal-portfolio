@@ -50,7 +50,7 @@ export default function Projects() {
   const projects = [
     {
       id: 14,
-      title: "Pharmacophore Website ",
+      title: "Pharmacophore ai — Startup Website",
       description: "End-to-end startup website delivered from scratch, covering product vision to production launch. I designed and developed the full experience, translated business goals into a scalable web architecture, and ensured a smooth, high-performance deployment pipeline.",
       tech: ["React", "JavaScript", "UI/UX", "Deployment", "DevOps"],
       image: "/images/projects/pharma.png",

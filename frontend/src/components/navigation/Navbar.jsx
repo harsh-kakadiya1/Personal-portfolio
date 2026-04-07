@@ -3,12 +3,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FileText } from 'lucide-react';
 import { useMobile } from '../../hooks/useMobile';
 import { useProjectModal } from '../../contexts/ProjectModalContext';
+import { useResumeModal } from '../../contexts/ResumeModalContext';
 
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isMobile } = useMobile();
   const { isProjectModalOpen } = useProjectModal();
+  const { setIsResumeModalOpen } = useResumeModal();
 
   const navItems = [
     { id: 'about', label: 'Harsh', icon: '◉', path: '/' },
@@ -73,9 +75,8 @@ export default function Navbar() {
           ))}
           
           {/* Resume Button */}
-          <a
-            href="/resume.pdf"
-            download="Harsh_Kakadiya_Resume.pdf"
+          <button
+            onClick={() => setIsResumeModalOpen(true)}
             className={`relative ${isMobile ? 'px-2 py-2' : 'px-4 py-2'} rounded-xl font-medium ${isMobile ? 'text-xs' : 'text-sm'} transition-colors duration-300 text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/20 ${isMobile ? 'min-w-[44px] min-h-[44px]' : ''} flex items-center justify-center`}
           >
             <div className={`relative flex items-center justify-center ${isMobile ? '' : 'gap-2'}`}>
@@ -90,7 +91,7 @@ export default function Navbar() {
                 boxShadow: "0 0 15px rgba(0, 212, 170, 0.3)"
               }}
             />
-          </a>
+          </button>
         </div>
       </div>
     </nav>

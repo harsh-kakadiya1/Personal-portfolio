@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { ProjectModalProvider } from './contexts/ProjectModalContext';
+import { ResumeModalProvider } from './contexts/ResumeModalContext';
 import Navbar from './components/navigation/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import { Component as AnimatedBackground } from './components/ui/raycast-animated-blue-background';
 import { ThemeProvider } from './components/ui/theme-provider';
 import CustomCursor from './components/ui/CustomCursor';
 import { GooeyLoader } from './components/ui/loader-10';
+import ResumeModal from './components/ResumeModal';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Research from './pages/Research';
@@ -54,6 +56,7 @@ function App() {
     >
       <Router>
         <ProjectModalProvider>
+        <ResumeModalProvider>
           <ScrollToTop />
           <div className="min-h-screen bg-black text-white relative">
             {/* Global Animated Background - Covers All Pages */}
@@ -77,8 +80,10 @@ function App() {
               </AnimatePresence>
             </main>
             <CustomCursor />
+            <ResumeModal />
           </div>
           </div>
+        </ResumeModalProvider>
         </ProjectModalProvider>
       </Router>
     </ThemeProvider>

@@ -6,12 +6,14 @@ import { SocialStories } from '../components/ui/social-stories';
 import { useMobile } from '../hooks/useMobile';
 import LogoLoop from '../components/ui/LogoLoop';
 import BackToTop from '../components/ui/BackToTop';
+import { useResumeModal } from '../contexts/ResumeModalContext';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiDocker, SiGit } from 'react-icons/si';
 import { ScrollVelocityContainer, ScrollVelocityRow } from '@/registry/magicui/scroll-based-velocity'
 
 export default function About() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const { isMobile } = useMobile();
+  const { isResumeModalOpen, setIsResumeModalOpen } = useResumeModal();
 
   // Mouse tracking for parallax effect
   useEffect(() => {
@@ -48,7 +50,7 @@ export default function About() {
 
   const experience = [
     {
-      role: "Founding Full-Stack Developer / CTO",
+      role: "FoundingFull-Stack Developer & DevOps Lead",
       company: "Pharmacophore, India",
       period: "Mar 2025 - Present",
       description: "Built the company website from scratch and owned end-to-end technical direction for the startup, including architecture, UI implementation, deployment, hosting, domain setup, and production launch. Delivered and continue to maintain the live site with full-stack and DevOps ownership.",
@@ -373,9 +375,8 @@ export default function About() {
             >
               Hire Me
             </motion.a>
-            <motion.a
-              href="/resume.pdf"
-              download="Harsh_Kakadiya_Resume.pdf"
+            <motion.button
+              onClick={() => setIsResumeModalOpen(true)}
               whileHover={{ 
                 scale: 1.05, 
                 borderColor: '#00d4aa',
@@ -384,8 +385,8 @@ export default function About() {
               whileTap={{ scale: 0.95 }}
               className="bg-black/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-black/40 hover:border-white/50 inline-block text-center"
             >
-              Download Resume
-            </motion.a>
+              View Resume
+            </motion.button>
           </div>
 
           {/* Availability Info */}
@@ -407,6 +408,7 @@ export default function About() {
       </div>
       
       <BackToTop />
+      
       {/* Scroll-based velocity demo */}
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden my-20">
         <ScrollVelocityContainer className="text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20">
