@@ -19,7 +19,7 @@ export default function Research() {
     {
       id: 1,
       title: "A real-time intelligent video surveillance framework for automated violence detection using advanced deep learning architectures",
-      description: "Automatic detection of violent incidents is important for providing immediate public safety response. In this paper,an advanced violence detection system is introduced which employs pose based spatiotemporal features as well as a CNN-LSTM deep learning approach that leverages Attention mechanisms.",
+      description: "Automatic detection of violent incidents is important for providing immediate public safety response. In this paper, an advanced violence detection system is introduced which employs pose based spatiotemporal features as well as a CNN-LSTM deep learning approach that leverages Attention mechanisms. In contrast to auto-regressive frame-level CNNmodels, our approach captures temporal dependencies over sequences of human skeleton poses (obtained using OpenPose) and bounding boxes (localized using YoloV3). We enlarged the available datasets by adding new violent action samples and obtained better detection performance with false alarms decrease. The experimental results on a real-world violence dataset achieved promising results (accuracy = 95.6) and the method performed in real-time. This paper proposes practical improvements, resolves several drawbacks in existing studies, and then promotes safer urban surveillance applications.",
       year: "2025",
       type: "Paper",
       status: "completed",
@@ -29,10 +29,11 @@ export default function Research() {
     {
       id: 2,
       title: "Effectiveness of Metadata-Driven Decisions in ML Pipeline Design",
-      description: "Metadata-driven Automated Machine Learning (AutoML) extends conventional pipeline search by leveraging dataset descriptions, meta-features, and data-catalog information to accelerate model discovery, improve transferability, and enhance interpretability. While metadata priors and meta-learning reduce search time and cold-start overhead, existing systems often underreport computational complexity and lack cohesive agent-based orchestration.",
+      description: "Developing effective machine learning pipelines requires appropriate algorithm selection and hyperparameter tuning tailored to dataset characteristics. Traditional AutoML systems rely on exhaustive search or computationally expensive optimisation, which is infeasible in many real-world settings. This paper introduces MetaFlow, a metadata driven AutoML framework that selects models using dataset properties combined with heuristic and constraint rules. Given metadata sample size, feature count, and class imbalance MetaFlow eliminates unpromising algorithms before training and concentrates computation on the most suitable candidates. Experiments on four real world datasets show that metadata conditioned constraints prune the candidate search space by 67% without sacrificing predictive competitiveness.",
       year: "2026",
       type: "Paper",
-      status: "in-progress",
+      status: "completed",
+      pdf: "/Constraints.pdf",
       venue: ""
     },
     // Add more entries. Use pdf: "/file.pdf" for in-portfolio viewer, or link: "https://..." for external.
