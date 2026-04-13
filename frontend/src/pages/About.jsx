@@ -1,31 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../components/navigation/Navbar';
-import { HeroTextPressure } from '../components/ui/hero-text-pressure';
 import { SocialStories } from '../components/ui/social-stories';
-import { useMobile } from '../hooks/useMobile';
 import LogoLoop from '../components/ui/LogoLoop';
 import BackToTop from '../components/ui/BackToTop';
 import { useResumeModal } from '../contexts/ResumeModalContext';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiDocker, SiGit } from 'react-icons/si';
-import { ScrollVelocityContainer, ScrollVelocityRow } from '@/registry/magicui/scroll-based-velocity'
 
 export default function About() {
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
-  const { isMobile } = useMobile();
-  const { isResumeModalOpen, setIsResumeModalOpen } = useResumeModal();
-
-  // Mouse tracking for parallax effect
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth) * 7;
-      const y = (e.clientY / window.innerHeight) * 7;
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  const { setIsResumeModalOpen } = useResumeModal();
 
   const education = [
     {
@@ -140,14 +122,10 @@ export default function About() {
           
           {/* Interactive Name */}
           <div className="mb-8">
-            {isMobile ? (
-              <h1 className="text-5xl font-bold">
-                <span className="text-white">Harsh </span>
-                <span className="text-cyan-400">Kakadiya</span>
-              </h1>
-            ) : (
-              <HeroTextPressure className="text-5xl md:text-8xl" />
-            )}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none">
+              <span className="text-white">Harsh </span>
+              <span className="text-cyan-400">Kakadiya</span>
+            </h1>
           </div>
           
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -408,20 +386,6 @@ export default function About() {
       </div>
       
       <BackToTop />
-      
-      {/* Scroll-based velocity demo */}
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden my-20">
-        <ScrollVelocityContainer className="text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-20">
-          <ScrollVelocityRow baseVelocity={10} direction={1}>
-            harsh
-          </ScrollVelocityRow>
-          <ScrollVelocityRow baseVelocity={10} direction={-1}>
-            kakadiya
-          </ScrollVelocityRow>
-        </ScrollVelocityContainer>
-        <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r" />
-        <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l" />
-      </div>
     </div>
   );
 }
