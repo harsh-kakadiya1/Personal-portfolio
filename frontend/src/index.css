@@ -121,3 +121,40 @@ input[type="text"] {
     font-size: 16px !important;
   }
 }
+
+/* Grain animation for background noise effect */
+@keyframes grain {
+  0% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -10px 5px;
+  }
+  20% {
+    background-position: 3px -8px;
+  }
+  30% {
+    background-position: -15px -5px;
+  }
+  40% {
+    background-position: 7px 2px;
+  }
+  50% {
+    background-position: -5px 10px;
+  }
+  60% {
+    background-position: 12px -3px;
+  }
+  70% {
+    background-position: -8px 0px;
+  }
+  80% {
+    background-position: 5px 5px;
+  }
+  90% {
+    background-position: -3px -8px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

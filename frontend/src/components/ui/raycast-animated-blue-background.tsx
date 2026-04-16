@@ -14,6 +14,17 @@ export const Component = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30" />
 
+      {/* Grain/Noise Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-20 mix-blend-mode-overlay pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23ffffff' filter='url(%23noiseFilter)' opacity='0.9'/%3E%3C/svg%3E")`,
+          backgroundSize: '256px 256px',
+          animation: 'grain 0.1s steps(2) infinite'
+        }}
+      />
+
+
       <motion.div
         className="absolute -left-1/4 -top-1/3 h-[75vh] w-[75vh] rounded-full bg-blue-500/16 blur-3xl"
         animate={{ x: [0, 90, 20], y: [0, 70, 30], scale: [1, 1.08, 0.98] }}

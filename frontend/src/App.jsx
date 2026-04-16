@@ -62,8 +62,7 @@ function App() {
             {/* Global Animated Background - Covers All Pages */}
             <div className="fixed inset-0 z-0 w-full h-full">
               <AnimatedBackground />
-              {/* Subtle overlay for better content readability */}
-              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="absolute inset-0 bg-black/8"></div>
             </div>
 
           <div className="relative z-10">
