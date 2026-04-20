@@ -79,9 +79,9 @@ export default function Research() {
                 </span>
               </div>
               {item.venue && (
-                <p className="text-gray-400 text-sm mb-2">{item.venue}</p>
+                <p className="text-gray-600 text-sm mb-2">{item.venue}</p>
               )}
-              <p className="text-gray-300 text-base leading-relaxed mb-4">
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">
                 {item.description}
               </p>
               {item.pdf && (

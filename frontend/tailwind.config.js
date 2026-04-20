@@ -18,7 +18,7 @@ export default {
         'brutal-pale-gray': '#cccccc',
         // Accent colors for brutalist design
         'accent-red': '#FF0000',
-        'accent-yellow': '#BFFF00',
+        'accent-yellow': '#E6FF00',
       },
       fontSize: {
         // Extra large sizes for brutalist headings
