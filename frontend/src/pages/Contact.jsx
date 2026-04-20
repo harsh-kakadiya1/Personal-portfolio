@@ -56,7 +56,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-white">
       <Navbar />
       
       <div className="relative z-10 container mx-auto px-4 py-24 pt-32">
@@ -64,47 +64,47 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          <div className="text-center mb-12">
-            <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl'} font-black text-white mb-4 uppercase tracking-tighter`}>
-              Get In <span className="text-gray-300">Touch</span>
+          <div className="mb-12 border-4 border-black p-8 md:p-12">
+            <h1 className={`${isMobile ? 'text-5xl' : 'text-7xl'} font-black text-black mb-4 uppercase tracking-tight leading-none`}>
+              GET IN TOUCH
             </h1>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              Have a project in mind or want to discuss potential opportunities? 
-              Feel free to reach out!
+            <div className="w-32 h-1 bg-accent-red mb-6"></div>
+            <p className="text-black font-bold text-lg max-w-2xl leading-relaxed">
+              Have a project in mind or want to discuss opportunities? Reach out and let's create something amazing together.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Contact Form */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-black/40 border-2 border-white/20 p-8"
+              className="border-4 border-black p-8 bg-white"
             >
-              <h2 className="text-2xl font-black text-white mb-6 uppercase tracking-tight">Send me a message</h2>
+              <h2 className="text-2xl font-black text-black mb-6 uppercase tracking-tight">MESSAGE</h2>
               
               {submitStatus === 'success' ? (
-                <div className="bg-green-500/20 border-2 border-green-500/50 text-green-300 p-4 mb-6">
-                  Thank you for your message! I'll get back to you soon.
+                <div className="border-4 border-black bg-accent-yellow text-black p-4 mb-6 font-bold">
+                  ✓ Thank you! I&apos;ll respond soon.
                 </div>
               ) : submitStatus === 'error' ? (
-                <div className="bg-red-500/20 border-2 border-red-500/50 text-red-300 p-4 mb-6">
-                  Oops! Something went wrong. Please try again later.
+                <div className="border-4 border-black bg-accent-red text-white p-4 mb-6 font-bold">
+                  Error! Please try again.
                 </div>
               ) : null}
               
               <form 
                 onSubmit={handleSubmit} 
-                className="space-y-6"
+                className="space-y-4"
                 action="https://formspree.io/f/xwpnzgnq"
                 method="POST"
               >
                 <div>
-                  <label htmlFor="name" className="block text-sm font-black uppercase tracking-wider text-gray-300 mb-1">
-                    Name
+                  <label htmlFor="name" className="block text-xs font-black uppercase tracking-wider text-black mb-2">
+                    NAME
                   </label>
                   <input
                     type="text"
@@ -113,14 +113,14 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black/20 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-400/50"
+                    className="w-full px-4 py-3 bg-white border-4 border-black text-black placeholder-gray-500 focus:outline-none font-bold"
                     placeholder="Your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-black uppercase tracking-wider text-gray-300 mb-1">
-                    Email
+                  <label htmlFor="email" className="block text-xs font-black uppercase tracking-wider text-black mb-2">
+                    EMAIL
                   </label>
                   <input
                     type="email"
@@ -129,14 +129,14 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black/20 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-400/50"
+                    className="w-full px-4 py-3 bg-white border-4 border-black text-black placeholder-gray-500 focus:outline-none font-bold"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-black uppercase tracking-wider text-gray-300 mb-1">
-                    Message
+                  <label htmlFor="message" className="block text-xs font-black uppercase tracking-wider text-black mb-2">
+                    MESSAGE
                   </label>
                   <textarea
                     id="message"
@@ -145,7 +145,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-black/20 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-400/50"
+                    className="w-full px-4 py-3 bg-white border-4 border-black text-black placeholder-gray-500 focus:outline-none font-bold resize-none"
                     placeholder="Your message here..."
                   />
                 </div>
@@ -153,29 +153,9 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 0 20px rgba(209, 213, 219, 0.2)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`w-full py-3 px-6 bg-gray-800/20 border-2 border-gray-600/50 text-white font-black uppercase tracking-wide transition-all hover:bg-gray-800/40 hover:border-gray-500/70 hover:text-gray-200 flex items-center justify-center gap-2 group ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full py-3 px-6 bg-black text-white border-4 border-black font-black uppercase tracking-wider transition-all hover:bg-accent-red ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                      Send Message
-                    </>
-                  )}
+                  {isSubmitting ? 'SENDING...' : 'SEND'}
                 </motion.button>
               </form>
             </motion.div>
@@ -185,98 +165,51 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="space-y-8"
+              className="flex flex-col gap-6"
             >
-              <div>
-                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tight">Contact Information</h3>
-                <p className="text-gray-300 mb-6">
-                  Feel free to reach out to me through any of these channels. 
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                </p>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start bg-black/20 border border-white/10 p-4">
-                    <div className="flex-shrink-0 bg-gray-700/10 p-2 border border-white/10">
-                      <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <p className="text-sm font-black uppercase tracking-wider text-gray-300">Email</p>
-                      <a href="mailto:harshkakadiya128@gmail.com" className="text-gray-300 hover:text-white">
-                        harshkakadiya128@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-black/20 border border-white/10 p-4">
-                    <div className="flex-shrink-0 bg-gray-700/10 p-2 border border-white/10">
-                      <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <p className="text-sm font-black uppercase tracking-wider text-gray-300">Location</p>
-                      <p className="text-gray-300">Surat, Gujarat, India</p>
-                    </div>
-                  </div>
-                </div>
+              {/* Info Card 1 */}
+              <div className="border-4 border-black p-6 bg-accent-yellow">
+                <h3 className="text-base font-black text-black mb-3 uppercase tracking-tight">EMAIL</h3>
+                <a href="mailto:harshkakadiya128@gmail.com" className="text-black font-bold hover:underline break-all">
+                  harshkakadiya128@gmail.com
+                </a>
               </div>
               
-              <div>
-                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tight">Let's Connect</h3>
-                <p className="text-gray-300 mb-4">
-                  Follow me on social media to stay updated with my latest projects and thoughts.
-                </p>
-                <div className="flex space-x-4">
+              {/* Info Card 2 */}
+              <div className="border-4 border-black p-6 bg-white">
+                <h3 className="text-base font-black text-black mb-3 uppercase tracking-tight">LOCATION</h3>
+                <p className="text-black font-bold">Surat, Gujarat, India</p>
+              </div>
+              
+              {/* Social Links */}
+              <div className="border-4 border-black p-6 bg-black text-white">
+                <h3 className="text-base font-black text-white mb-4 uppercase tracking-tight">CONNECT</h3>
+                <div className="flex flex-wrap gap-3">
                   {socialLinks.map((social) => (
                     <a
                       key={social.name}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group"
-                      aria-label={social.name}
+                      className="px-3 py-2 bg-accent-red text-white border-2 border-white font-black text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-all"
+                      title={social.name}
                     >
-                      <div className="relative w-12 h-12 flex items-center justify-center border-2 border-white/20 bg-transparent cursor-pointer transition-all duration-300 overflow-hidden">
-                        {/* Background tilt element */}
-                        <div className="absolute inset-0 bg-black/80 transition-all duration-300 group-hover:rotate-[35deg] group-hover:origin-bottom pointer-events-none" />
-                        
-                        {/* Glassmorphism container */}
-                        <div className="relative w-full h-full flex items-center justify-center bg-transparent border border-gray-400/30 transition-all duration-300 group-hover:bg-gray-400/20 group-hover:backdrop-blur-sm">
-                          {/* Social Media Icon */}
-                          <svg 
-                            className="w-6 h-6 text-white transition-all duration-300 group-hover:scale-110" 
-                            fill="currentColor" 
-                            viewBox="0 0 24 24"
-                          >
-                            <path d={social.icon} />
-                          </svg>
-                        </div>
-                      </div>
+                      {social.name.toUpperCase()}
                     </a>
                   ))}
                 </div>
               </div>
               
-              <div className="bg-black/40 border-2 border-white/20 p-6">
-                <h3 className="text-lg font-black text-white mb-3 uppercase tracking-tight">Looking to hire?</h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  I'm currently available for freelance work and internships. Let's talk about how I can help bring your ideas to life.
-                </p>
-                <a 
-                  href="https://calendly.com/harshkakadiya128" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-300 hover:text-white font-black uppercase tracking-wider"
-                >
-                  Schedule a call
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </a>
-              </div>
+              {/* CTA Card */}
+              <a 
+                href="https://calendly.com/harshkakadiya128" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-4 border-black p-6 bg-accent-red text-white font-black no-underline hover:bg-black hover:text-accent-red transition-all text-center block"
+              >
+                <div className="text-base uppercase tracking-tight mb-2">SCHEDULE A CALL</div>
+                <div className="text-xs uppercase tracking-wider">Available for projects</div>
+              </a>
             </motion.div>
           </div>
         </motion.div>

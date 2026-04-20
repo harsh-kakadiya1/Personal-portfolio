@@ -238,7 +238,7 @@ export default function Playground() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-white">
       {/* Navigation Bar */}
       <Navbar />
       
@@ -251,14 +251,18 @@ export default function Playground() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="text-gray-300">GitHub</span> Activity
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              My open-source contributions and development journey
-            </p>
+          <div className="max-w-3xl mx-auto">
+            <div className="border-4 border-black p-12 md:p-16 text-center bg-white">
+              <h1 className="text-6xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-tight">
+                GITHUB ACTIVITY
+              </h1>
+              <div className="w-32 h-1 bg-accent-red mb-8 mx-auto"></div>
+              <p className="text-base md:text-lg text-black font-bold leading-relaxed">
+                My open-source contributions and development journey
+              </p>
+            </div>
           </div>
+          <div className="mb-12"></div>
 
           {/* Profile Overview */}
           <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
@@ -280,15 +284,17 @@ export default function Playground() {
           <GitHubAchievements username={githubUsername} />
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {Object.entries(githubStats.stats).map(([key, value]) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {Object.entries(githubStats.stats).map(([key, value], index) => (
               <motion.div
                 key={key}
-                whileHover={{ y: -5 }}
-                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className={`border-4 border-black p-6 text-center ${index % 2 === 0 ? 'bg-white' : 'bg-accent-yellow'}`}
               >
-                <div className="text-3xl font-bold text-gray-300 mb-2">{value}</div>
-                <div className="text-sm font-medium text-gray-300 uppercase tracking-wider">
+                <div className="text-4xl font-black text-black mb-3">{value}</div>
+                <div className="text-xs font-black text-black uppercase tracking-widest">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
                 </div>
               </motion.div>
@@ -298,37 +304,33 @@ export default function Playground() {
           {/* Contribution Heatmap */}
           <GitHubHeatmap username={githubUsername} />
           {/* Featured Repositories */}
-          <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6">
-            <h3 className="text-xl font-bold text-white mb-6">Featured Repositories</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mb-12">
+            <h3 className="text-3xl font-black text-black mb-6 uppercase tracking-tight">Featured Repos</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {githubStats.featuredRepos.map((repo, i) => (
                 <motion.a
                   key={repo.name}
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -5 }}
-                  className="block bg-black/20 hover:bg-black/40 border border-white/20 rounded-xl p-5 transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`block border-4 border-black p-6 transition-all ${i % 2 === 0 ? 'bg-white' : 'bg-accent-yellow'} hover:shadow-lg`}
                 >
-                  <div className="flex items-center mb-3">
-                    <h4 className="text-lg font-bold text-white">{repo.name}</h4>
-                    <span className="ml-auto px-2 py-1 text-xs bg-white/10 text-gray-300 rounded-full">
+                  <div className="mb-3">
+                    <h4 className="text-base font-black text-black uppercase tracking-tight mb-2">{repo.name}</h4>
+                    <span className="inline-block px-3 py-1 text-xs bg-black text-white border-2 border-black font-black uppercase tracking-wider">
                       {repo.language}
                     </span>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">{repo.description}</p>
-                  <div className="flex items-center text-xs text-gray-400">
-                    <span className="flex items-center mr-4">
-                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 7a1 1 0 100-2 1 1 0 000 2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
-                      </svg>
-                      {repo.stars} stars
+                  <p className="text-black text-xs font-bold mb-4 line-clamp-2">{repo.description}</p>
+                  <div className="flex items-center text-xs font-black text-black space-x-4">
+                    <span className="flex items-center">
+                      ⭐ {repo.stars}
                     </span>
                     <span className="flex items-center">
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                      </svg>
-                      {repo.forks} forks
+                      🔀 {repo.forks}
                     </span>
                   </div>
                 </motion.a>
@@ -344,66 +346,45 @@ export default function Playground() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-20"
         >
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              My <span className="text-gray-300">Toolkit</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              The arsenal of tools and technologies that power my development journey
-            </p>
+          <div className="max-w-3xl mx-auto">
+            <div className="border-4 border-black p-12 md:p-16 text-center bg-white mb-12">
+              <h1 className="text-6xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-tight">
+                MY TOOLKIT
+              </h1>
+              <div className="w-32 h-1 bg-accent-red mb-8 mx-auto"></div>
+              <p className="text-base md:text-lg text-black font-bold leading-relaxed">
+                The arsenal of tools and technologies that power my development journey
+              </p>
+            </div>
           </div>
 
           {/* Tools Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {tools.map((tool, index) => (
               <motion.div
                 key={tool.name}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 group cursor-pointer relative overflow-hidden"
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className={`border-4 border-black p-6 text-center transition-all hover:shadow-lg ${index % 2 === 0 ? 'bg-white' : 'bg-accent-yellow'}`}
               >
-                {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`} />
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="text-4xl mb-4 text-center">
-                    {tool.icon}
-                  </div>
-                  
-                  {/* Tool Name */}
-                  <h3 className="text-white font-bold text-lg mb-3 text-center group-hover:text-gray-300 transition-colors">
-                    {tool.name}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-gray-400 text-sm text-center leading-relaxed group-hover:text-gray-300 transition-colors">
-                    {tool.description}
-                  </p>
+                {/* Icon */}
+                <div className="text-5xl mb-4">
+                  {tool.icon}
                 </div>
-
-                {/* Hover Border Glow */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gray-600/30 transition-colors duration-300" />
                 
-                {/* Corner Accent */}
-                <div className="absolute top-3 right-3 w-2 h-2 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                {/* Tool Name */}
+                <h3 className="text-base font-black text-black mb-3 uppercase tracking-tight">
+                  {tool.name}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-black text-xs font-bold leading-relaxed">
+                  {tool.description}
+                </p>
               </motion.div>
             ))}
           </div>
-
-          {/* Bottom Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="text-center mt-16"
-          >
-            <p className="text-gray-400 text-lg">
-              Each tool is a brushstroke in the masterpiece of development
-            </p>
-          </motion.div>
         </motion.section>
       </div>
       
