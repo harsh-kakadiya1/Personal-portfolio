@@ -68,10 +68,10 @@ export default function Research() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`border-4 border-black p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-accent-yellow'} hover:shadow-lg transition-all duration-300`}
+              className={`border-4 border-black p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-yellow-100'} hover:shadow-lg transition-all duration-300`}
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                <h2 className={`${isMobile ? 'text-base' : 'text-lg'} font-black text-black uppercase tracking-tight`}>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-2">
+                <h2 className={`${isMobile ? 'text-sm' : 'text-base'} font-black text-black uppercase tracking-tight`}>
                   {item.title}
                 </h2>
                 <span className="text-black text-xs font-black uppercase tracking-wider shrink-0 px-3 py-1 bg-accent-red text-white">
@@ -79,9 +79,9 @@ export default function Research() {
                 </span>
               </div>
               {item.venue && (
-                <p className="text-gray-600 text-sm mb-2">{item.venue}</p>
+                <p className="text-gray-600 text-xs mb-1">{item.venue}</p>
               )}
-              <p className="text-gray-700 text-sm leading-relaxed mb-4">
+              <p className="text-gray-700 text-xs leading-relaxed mb-3">
                 {item.description}
               </p>
               {item.pdf && (

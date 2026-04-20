@@ -251,15 +251,18 @@ export default function Playground() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="border-4 border-black p-12 md:p-16 mb-12 text-center">
-            <h1 className="text-6xl md:text-7xl font-black text-black mb-4 uppercase tracking-tight leading-none">
-              GITHUB ACTIVITY
-            </h1>
-            <div className="w-32 h-1 bg-accent-red mb-6 mx-auto"></div>
-            <p className="text-lg text-black font-bold max-w-2xl mx-auto">
-              My open-source contributions and development journey
-            </p>
+          <div className="max-w-3xl mx-auto">
+            <div className="border-4 border-black p-12 md:p-16 text-center bg-white">
+              <h1 className="text-6xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-tight">
+                GITHUB ACTIVITY
+              </h1>
+              <div className="w-32 h-1 bg-accent-red mb-8 mx-auto"></div>
+              <p className="text-base md:text-lg text-black font-bold leading-relaxed">
+                My open-source contributions and development journey
+              </p>
+            </div>
           </div>
+          <div className="mb-12"></div>
 
           {/* Profile Overview */}
           <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">

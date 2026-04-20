@@ -76,53 +76,35 @@ export default function About() {
       {/* Main Content */}
       <div className="relative z-10 px-4 py-16 pt-28 min-h-screen">
         
-        {/* Hero Section - Brutalist Grid */}
+        {/* Hero Section - Centered Brutalist */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="mb-12 border-4 border-black p-8 md:p-12"
+          className="mb-12 border-4 border-black p-8 md:p-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-            {/* Left Column - Text */}
-            <div className="flex flex-col justify-start">
-              <div className="mb-6 md:mb-8">
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-black leading-none mb-4 tracking-tight">
-                  HARSH
-                </h1>
-                <h2 className="text-4xl md:text-5xl font-black text-accent-red leading-none mb-4 tracking-tight">
-                  KAKADIYA
-                </h2>
-                <div className="w-24 h-1 bg-accent-red mb-6"></div>
-              </div>
-              
-              <p className="text-base md:text-lg font-bold text-black leading-relaxed max-w-sm mb-6">
-                AI Developer and Conversational AI Specialist crafting innovative solutions at the intersection of technology and human needs.
-              </p>
-              
-              <div className="flex gap-3 flex-wrap">
-                <a href="https://www.linkedin.com/in/harsh-kakadiya" target="_blank" rel="noopener noreferrer"
-                   className="px-4 py-2 bg-black text-white border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-red hover:text-black transition-all">
-                  LinkedIn
-                </a>
-                <a href="https://github.com/harsh-kakadiya1" target="_blank" rel="noopener noreferrer"
-                   className="px-4 py-2 bg-white text-black border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-yellow transition-all">
-                  GitHub
-                </a>
-              </div>
-            </div>
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-black leading-tight mb-4 tracking-tight">
+              HARSH
+            </h1>
+            <h2 className="text-4xl md:text-5xl font-black text-accent-red leading-tight mb-6 tracking-tight">
+              KAKADIYA
+            </h2>
+            <div className="w-24 h-1 bg-accent-red mb-8 mx-auto"></div>
             
-            {/* Right Column - Profile Image with Geometric Overlay */}
-            <div className="relative">
-              <div className="border-4 border-black bg-accent-yellow p-0 relative">
-                <img 
-                  src="/images/projects/profile.png" 
-                  alt="Harsh Kakadiya"
-                  className="w-full h-auto block border-4 border-black"
-                />
-              </div>
-              {/* Accent Circle */}
-              <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-accent-red border-4 border-black"></div>
+            <p className="text-base md:text-lg font-bold text-black leading-relaxed mb-8">
+              AI Developer and Conversational AI Specialist crafting innovative solutions at the intersection of technology and human needs.
+            </p>
+            
+            <div className="flex gap-3 justify-center flex-wrap">
+              <a href="https://www.linkedin.com/in/harsh-kakadiya" target="_blank" rel="noopener noreferrer"
+                 className="px-4 py-2 bg-black text-white border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-red hover:text-black transition-all">
+                LinkedIn
+              </a>
+              <a href="https://github.com/harsh-kakadiya1" target="_blank" rel="noopener noreferrer"
+                 className="px-4 py-2 bg-white text-black border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-yellow transition-all">
+                GitHub
+              </a>
             </div>
           </div>
         </motion.div>
