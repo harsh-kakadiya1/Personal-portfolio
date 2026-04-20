@@ -51,12 +51,12 @@ body {
 /* Hover effects for interactive elements */
 .custom-cursor.hover {
   transform: scale(1.5);
-  background-color: #00d4aa; /* Cyan color */
+  background-color: #ffffff; /* White for brutalist theme */
 }
 
 .custom-cursor-border.hover {
   transform: scale(0.5);
-  border-color: rgba(0, 212, 170, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Hide cursor on mobile devices */
@@ -97,11 +97,11 @@ html {
 
 .terminal-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background: rgba(0, 212, 170, 0.4);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 212, 170, 0.6);
+  background: rgba(107, 114, 128, 0.6);
 }
 
 /* Mobile optimizations for terminal */

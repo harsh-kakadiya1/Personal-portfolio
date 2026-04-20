@@ -195,10 +195,10 @@ export default function CommandInput({ onCommand, isProcessing, commandHistory =
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 mt-2 bg-black/95 border border-cyan-400/40 rounded-lg shadow-2xl shadow-cyan-500/20 backdrop-blur-sm z-50 max-h-48 sm:max-h-64 overflow-y-auto"
+            className="absolute top-full left-0 right-0 mt-2 bg-black/95 border border-gray-600/40 rounded-lg shadow-2xl shadow-gray-700/20 backdrop-blur-sm z-50 max-h-48 sm:max-h-64 overflow-y-auto"
           >
             <div className="p-2">
-              <div className="text-cyan-400 text-xs font-mono mb-2 px-2">
+              <div className="text-gray-300 text-xs font-mono mb-2 px-2">
                 Available Commands ({filteredCommands.length})
               </div>
               {filteredCommands.map((cmd, index) => (
@@ -206,20 +206,20 @@ export default function CommandInput({ onCommand, isProcessing, commandHistory =
                   key={cmd.command}
                   className={`px-2 sm:px-3 py-1.5 sm:py-2 rounded cursor-pointer font-mono text-xs sm:text-sm transition-colors ${
                     index === selectedIndex 
-                      ? 'bg-cyan-400/20 border-l-2 border-cyan-400' 
-                      : 'hover:bg-cyan-400/10'
+                      ? 'bg-gray-700/20 border-l-2 border-gray-400' 
+                      : 'hover:bg-gray-700/10'
                   }`}
                   onClick={() => selectCommand(cmd.command)}
                   whileHover={{ x: 2 }}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                    <span className="text-xs sm:text-sm" style={{ color: '#00d4ff' }}>{cmd.command}</span>
+                    <span className="text-xs sm:text-sm" style={{ color: '#e5e7eb' }}>{cmd.command}</span>
                     <span className="text-xs text-gray-400 mt-0.5 sm:mt-0 sm:ml-2">{cmd.description}</span>
                   </div>
                 </motion.div>
               ))}
             </div>
-            <div className="border-t border-cyan-400/20 p-2">
+            <div className="border-t border-gray-700/20 p-2">
               <div className="text-xs text-gray-500 font-mono">
                 <span className="hidden sm:inline">↑↓ Navigate • Enter Select • Esc Close</span>
                 <span className="sm:hidden">↑↓ Navigate • Enter Select</span>

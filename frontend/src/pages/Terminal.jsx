@@ -158,7 +158,7 @@ Try asking me anything - I'm here to help!`,
           {/* Drag Me Hint */}
           {showDragHint && (
             <motion.div 
-              className="absolute left-10 bottom-10 flex flex-col items-start space-y-2 text-cyan-400 font-mono z-50"
+              className="absolute left-10 bottom-10 flex flex-col items-start space-y-2 text-gray-300 font-mono z-50"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -294,9 +294,9 @@ Try asking me anything - I'm here to help!`,
 
       {/* Terminal Container */}
       <div className={`relative z-20 flex items-center justify-center min-h-screen ${isMobile ? 'p-1' : 'p-2 sm:p-4 md:p-6 lg:p-8'}`}>
-        <div className={`w-full max-w-5xl ${isMobile ? 'h-[95vh]' : 'h-[85vh] sm:h-[80vh] md:h-[75vh] lg:h-[70vh]'} flex flex-col bg-black/95 backdrop-blur-lg border border-cyan-400/50 ${isMobile ? 'rounded-lg' : 'rounded-lg sm:rounded-xl'} shadow-2xl shadow-cyan-500/20`}>
+        <div className={`w-full max-w-5xl ${isMobile ? 'h-[95vh]' : 'h-[85vh] sm:h-[80vh] md:h-[75vh] lg:h-[70vh]'} flex flex-col bg-black/95 backdrop-blur-lg border border-gray-600/50 ${isMobile ? 'rounded-lg' : 'rounded-lg sm:rounded-xl'} shadow-2xl shadow-gray-700/20`}>>
           {/* Header */}
-          <div className={`flex-shrink-0 border-b border-cyan-400/40 bg-gradient-to-r from-black/90 to-gray-900/90 ${isMobile ? 'rounded-t-lg' : 'rounded-t-lg sm:rounded-t-xl'}`}>
+          <div className={`flex-shrink-0 border-b border-gray-600/40 bg-gradient-to-r from-black/90 to-gray-900/90 ${isMobile ? 'rounded-t-lg' : 'rounded-t-lg sm:rounded-t-xl'}`}>>
             <div className={`flex items-center justify-between ${isMobile ? 'p-2' : 'p-2 sm:p-3 md:p-4'}`}>
               <div className={`flex items-center ${isMobile ? 'gap-2' : 'gap-2 sm:gap-3 md:gap-4'}`}>
                 <div className={`flex ${isMobile ? 'gap-1' : 'gap-1 sm:gap-2'}`}>
@@ -304,11 +304,11 @@ Try asking me anything - I'm here to help!`,
                   <div className={`${isMobile ? 'w-2 h-2' : 'w-3 h-3 sm:w-4 sm:h-4'} rounded-full bg-yellow-500 shadow-lg shadow-yellow-500/50`}></div>
                   <div className={`${isMobile ? 'w-2 h-2' : 'w-3 h-3 sm:w-4 sm:h-4'} rounded-full bg-green-500 shadow-lg shadow-green-500/50`}></div>
                 </div>
-                <span className={`text-cyan-400 font-mono ${isMobile ? 'text-xs' : 'text-sm sm:text-base md:text-lg'} font-semibold`}>
+                <span className={`text-gray-300 font-mono ${isMobile ? 'text-xs' : 'text-sm sm:text-base md:text-lg'} font-semibold`}>
                   {isMobile ? "AI Assistant" : "Harsh's AI Assistant"}
                 </span>
               </div>
-              <div className={`${isMobile ? 'text-xs' : 'text-xs sm:text-sm'} font-mono bg-cyan-400/10 px-2 py-1 sm:px-3 rounded-full border border-cyan-400/30`} style={{ color: '#00d4aa' }}>
+              <div className={`${isMobile ? 'text-xs' : 'text-xs sm:text-sm'} font-mono bg-gray-800/10 px-2 py-1 sm:px-3 rounded-full border border-gray-600/30`} style={{ color: '#d1d5db' }}>
                 {isMobile ? currentTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : (
                   <>
                     <span className="hidden sm:inline">{currentTime.toLocaleString()}</span>
@@ -376,7 +376,7 @@ Try asking me anything - I'm here to help!`,
           </div>
 
           {/* Command Input */}
-          <div className={`flex-shrink-0 border-t border-cyan-400/40 bg-gradient-to-r from-black/90 to-gray-900/90 ${isMobile ? 'rounded-b-lg' : 'rounded-b-lg sm:rounded-b-xl'}`}>
+          <div className={`flex-shrink-0 border-t border-gray-700/40 bg-gradient-to-r from-black/90 to-gray-900/90 ${isMobile ? 'rounded-b-lg' : 'rounded-b-lg sm:rounded-b-xl'}`}>>
             <div className={isMobile ? 'p-2' : 'p-2 sm:p-3 md:p-4'}>
               <CommandInput 
                 onCommand={handleCommand}

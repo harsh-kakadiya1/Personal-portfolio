@@ -21,7 +21,7 @@ export default function ResumeModal() {
           <h3 className="text-white text-2xl font-bold">Resume Preview</h3>
           <button
             onClick={() => setIsResumeModalOpen(false)}
-            className="text-white hover:text-cyan-400 text-2xl font-bold transition-colors"
+            className="text-white hover:text-gray-300 text-2xl font-bold transition-colors"
           >
             ×
           </button>
@@ -39,7 +39,7 @@ export default function ResumeModal() {
             download="Harsh_Kakadiya_Resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 px-6 py-3 rounded-xl font-bold text-lg transition-all hover:bg-cyan-500/30 hover:border-cyan-400/70 inline-block"
+            className="bg-gray-800/20 backdrop-blur-sm border border-gray-600/50 text-white px-6 py-3 rounded-xl font-bold text-lg transition-all hover:bg-gray-800/40 hover:border-gray-500/70 inline-block"
           >
             Download Resume
           </motion.a>

@@ -214,8 +214,8 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
           className={`text-center ${isMobile ? 'mb-12' : 'mb-20'}`}
         >
-          <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-bold text-white ${isMobile ? 'mb-4' : 'mb-6'}`}>
-            My <span className="text-cyan-400">Projects</span>
+          <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-black text-white ${isMobile ? 'mb-4' : 'mb-6'} uppercase tracking-tighter`}>
+            My <span className="text-gray-300">Projects</span>
           </h1>
           <p className={`${isMobile ? 'text-lg' : 'text-2xl'} text-gray-300 ${isMobile ? 'max-w-sm' : 'max-w-3xl'} mx-auto leading-relaxed ${isMobile ? 'px-2' : ''}`}>
             A showcase of my technical journey and creative solutions
@@ -231,10 +231,10 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               onClick={() => openModal(project)}
-              className={`bg-black/30 backdrop-blur-sm border border-white/20 ${isMobile ? 'rounded-xl p-4' : 'rounded-2xl p-6'} hover:border-cyan-400/50 transition-all duration-300 group cursor-pointer flex h-full flex-col`}
+              className={`bg-black/40 border-2 border-white/20 ${isMobile ? 'p-4' : 'p-6'} hover:border-white/40 hover:bg-black/60 transition-all duration-300 group cursor-pointer flex h-full flex-col`}
             >
               {/* Project Image */}
-              <div className={`${isMobile ? 'h-40 mb-4' : 'h-48 mb-6'} bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-lg overflow-hidden relative`}>
+              <div className={`${isMobile ? 'h-40 mb-4' : 'h-48 mb-6'} bg-gradient-to-br from-gray-700/20 to-gray-600/20 overflow-hidden relative border border-white/10`}>
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -243,10 +243,10 @@ export default function Projects() {
                 {/* Professional / Internship / PyPI badge */}
                 {project.badge && (
                   <div className={`absolute ${isMobile ? 'top-2 left-2' : 'top-3 left-3'}`}>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${
+                    <span className={`px-2 py-1 text-xs font-bold uppercase tracking-wider border backdrop-blur-sm ${
                       project.badge === 'Published PyPI Package'
                         ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
-                        : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                        : 'bg-gray-700/20 text-gray-300 border-gray-600/30'
                     }`}>
                       {project.badge}
                     </span>
@@ -266,7 +266,7 @@ export default function Projects() {
 
               {/* Project Info - short description on card */}
               <div className="flex flex-1 flex-col">
-                <h3 className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-white ${isMobile ? 'mb-2' : 'mb-3'} group-hover:text-cyan-400 transition-colors`}>
+                <h3 className={`${isMobile ? 'text-lg' : 'text-xl'} font-black text-white ${isMobile ? 'mb-2' : 'mb-3'} group-hover:text-gray-200 transition-colors uppercase tracking-tight`}>
                   {project.title}
                 </h3>
                 <p className={`text-gray-300 ${isMobile ? 'text-sm mb-3 leading-relaxed' : 'text-base mb-4 leading-relaxed'}`}>
@@ -278,7 +278,7 @@ export default function Projects() {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className={`bg-cyan-500/10 text-cyan-400 ${isMobile ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'} rounded-full border border-cyan-500/20 font-medium`}
+                      className={`bg-gray-700/10 text-gray-300 ${isMobile ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'} border border-gray-600/20 font-bold uppercase text-xs tracking-wider`}
                     >
                       {tech}
                     </span>
@@ -295,7 +295,7 @@ export default function Projects() {
                       onClick={(e) => e.stopPropagation()}
                       whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-black/20 backdrop-blur-sm text-white px-4 rounded-lg font-medium transition-all hover:bg-black/40 border border-white/20 text-center flex items-center justify-center gap-2`}
+                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-black/20 border-2 border-white/20 text-white px-4 font-bold uppercase tracking-wide transition-all hover:bg-black/40 hover:border-white/40 text-center flex items-center justify-center gap-2`}
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
@@ -311,7 +311,7 @@ export default function Projects() {
                       onClick={(e) => e.stopPropagation()}
                       whileHover={{ scale: isMobile ? 1.02 : 1.05, boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
                       whileTap={{ scale: 0.95 }}
-                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 px-4 rounded-lg font-medium transition-all hover:bg-cyan-500/30 hover:border-cyan-400/70 hover:text-cyan-300 text-center flex items-center justify-center gap-2 group`}
+                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-gray-800/20 border-2 border-gray-600/50 text-white px-4 font-bold uppercase tracking-wide transition-all hover:bg-gray-800/40 hover:border-gray-500/70 hover:text-gray-200 text-center flex items-center justify-center gap-2 group`}
                     >
                       <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -344,7 +344,7 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
                 onClick={(e) => e.stopPropagation()}
-                className={`relative w-full max-w-2xl max-h-[90vh] overflow-hidden rounded-2xl border border-white/20 bg-black/80 backdrop-blur-xl shadow-2xl flex flex-col ${isMobile ? 'max-h-[85vh]' : ''}`}
+                className={`relative w-full max-w-2xl max-h-[90vh] overflow-hidden border-2 border-white/20 bg-black/80 backdrop-blur-xl shadow-2xl flex flex-col ${isMobile ? 'max-h-[85vh]' : ''}`}
               >
                 {/* Close button */}
                 <button
@@ -358,7 +358,7 @@ export default function Projects() {
                 {/* Scrollable content */}
                 <div className="overflow-y-auto flex-1 p-6 pt-12">
                   {/* Hero image */}
-                  <div className="h-48 md:h-56 rounded-xl overflow-hidden bg-gradient-to-br from-cyan-500/20 to-purple-500/20 mb-6">
+                  <div className="h-48 md:h-56 bg-gradient-to-br from-gray-700/20 to-gray-600/20 mb-6 border border-white/10">
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
@@ -367,19 +367,19 @@ export default function Projects() {
                   </div>
 
                   <div className="flex items-center gap-3 mb-4 flex-wrap">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white pr-10">
+                    <h2 className="text-2xl md:text-3xl font-black text-white pr-10 uppercase tracking-tight">
                       {selectedProject.title}
                     </h2>
                     {selectedProject.badge && (
-                      <span className={`shrink-0 px-3 py-1 rounded-full text-xs font-medium border ${
+                      <span className={`shrink-0 px-3 py-1 text-xs font-bold uppercase tracking-wider border ${
                         selectedProject.badge === 'Published PyPI Package'
                           ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
-                          : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                          : 'bg-gray-700/20 text-gray-300 border-gray-600/30'
                       }`}>
                         {selectedProject.badge}
                       </span>
                     )}
-                    <span className={`shrink-0 px-3 py-1 rounded-full text-xs font-medium border ${
+                    <span className={`shrink-0 px-3 py-1 text-xs font-bold uppercase tracking-wider border ${
                       selectedProject.status === 'completed'
                         ? 'bg-green-500/20 text-green-400 border-green-500/30'
                         : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
@@ -397,7 +397,7 @@ export default function Projects() {
                     {selectedProject.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="bg-cyan-500/10 text-cyan-400 px-3 py-1 text-sm rounded-full border border-cyan-500/20 font-medium"
+                        className="bg-gray-700/10 text-gray-300 px-3 py-1 text-sm border border-gray-600/20 font-bold uppercase text-xs tracking-wider"
                       >
                         {tech}
                       </span>
@@ -407,8 +407,8 @@ export default function Projects() {
                   {/* More about - only show when user has added detail */}
                   {selectedProject.moreAbout?.trim() && (
                     <div className="mb-6">
-                      <h3 className="text-lg font-semibold text-cyan-400 mb-2">More about this project</h3>
-                      <div className="text-gray-300 text-sm md:text-base leading-relaxed whitespace-pre-wrap">
+                      <h3 className="text-lg font-black text-gray-300 mb-2 uppercase tracking-tight">More about this project</h3>
+                      <div className="text-gray-300 text-sm md:text-base leading-relaxed whitespace-pre-wrap border-l-2 border-white/20 pl-4">
                         {selectedProject.moreAbout}
                       </div>
                     </div>
@@ -423,7 +423,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className={`${isMobile ? 'w-full py-3' : 'flex-1 py-3'} bg-black/40 border border-white/20 text-white px-4 rounded-xl font-medium text-center flex items-center justify-center gap-2 hover:bg-white/10 transition-colors`}
+                        className={`${isMobile ? 'w-full py-3' : 'flex-1 py-3'} bg-black/40 border-2 border-white/20 text-white px-4 font-bold uppercase tracking-wide text-center flex items-center justify-center gap-2 hover:bg-white/10 transition-colors`}
                       >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
@@ -438,7 +438,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
                         whileTap={{ scale: 0.98 }}
-                        className={`${isMobile ? 'w-full py-3' : 'flex-1 py-3'} bg-cyan-500/20 border border-cyan-400/50 text-cyan-400 px-4 rounded-xl font-medium text-center flex items-center justify-center gap-2 hover:bg-cyan-500/30 transition-colors`}
+                        className={`${isMobile ? 'w-full py-3' : 'flex-1 py-3'} bg-gray-800/20 border-2 border-gray-600/50 text-white px-4 font-bold uppercase tracking-wide text-center flex items-center justify-center gap-2 hover:bg-gray-800/40 transition-colors`}
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -458,10 +458,10 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className={`${isMobile ? 'mt-12' : 'mt-20'} text-center bg-black/30 backdrop-blur-sm border border-white/50 ${isMobile ? 'rounded-xl p-6' : 'rounded-2xl p-12'}`}
+          className={`${isMobile ? 'mt-12' : 'mt-20'} text-center bg-black/40 border-2 border-white/20 ${isMobile ? 'p-6' : 'p-12'}`}
         >
-          <h2 className={`${isMobile ? 'text-2xl' : 'text-4xl md:text-5xl'} font-bold text-white ${isMobile ? 'mb-3' : 'mb-6'}`}>
-            Interested in <span className="text-cyan-400">Collaborating?</span>
+          <h2 className={`${isMobile ? 'text-2xl' : 'text-4xl md:text-5xl'} font-black text-white ${isMobile ? 'mb-3' : 'mb-6'} uppercase tracking-tight`}>
+            Interested in <span className="text-gray-300">Collaborating?</span>
           </h2>
           <p className={`${isMobile ? 'text-base mb-6' : 'text-xl mb-8'} text-gray-300 ${isMobile ? 'max-w-sm' : 'max-w-2xl'} mx-auto`}>
             Let's build something amazing together. I'm always open to new opportunities and exciting projects.
@@ -471,10 +471,10 @@ export default function Projects() {
             onClick={() => navigate('/contact')}
             whileHover={{ 
               scale: isMobile ? 1.02 : 1.05, 
-              boxShadow: "0 0 30px rgba(0, 212, 170, 0.4)" 
+              boxShadow: "0 0 30px rgba(107, 114, 128, 0.2)" 
             }}
             whileTap={{ scale: 0.95 }}
-            className={`bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/30 hover:border-cyan-400/70 ${isMobile ? 'px-6 py-3 text-base' : 'px-8 py-4 text-lg'} rounded-xl font-bold transition-all`}
+            className={`bg-gray-800/20 border-2 border-gray-600/50 text-white hover:bg-gray-800/40 hover:border-gray-500/70 ${isMobile ? 'px-6 py-3 text-base' : 'px-8 py-4 text-lg'} font-bold uppercase tracking-wide transition-all`}
           >
             Get In Touch
           </motion.button>

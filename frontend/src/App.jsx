@@ -5,7 +5,6 @@ import { ProjectModalProvider } from './contexts/ProjectModalContext';
 import { ResumeModalProvider } from './contexts/ResumeModalContext';
 import Navbar from './components/navigation/Navbar';
 import ScrollToTop from './components/ScrollToTop';
-import { Component as AnimatedBackground } from './components/ui/raycast-animated-blue-background';
 import { ThemeProvider } from './components/ui/theme-provider';
 import CustomCursor from './components/ui/CustomCursor';
 import { GooeyLoader } from './components/ui/loader-10';
@@ -38,9 +37,9 @@ function App() {
       >
         <div className="min-h-screen bg-black text-white flex items-center justify-center">
           <GooeyLoader
-            primaryColor="#06b6d4" // cyan-400
-            secondaryColor="#FFFFFF" // cyan-500
-            borderColor="#1e293b" // slate-800
+            primaryColor="#ffffff" // white for brutalist theme
+            secondaryColor="#666666" // gray
+            borderColor="#1a1a1a" // dark gray
           />
         </div>
       </ThemeProvider>
@@ -59,10 +58,18 @@ function App() {
         <ResumeModalProvider>
           <ScrollToTop />
           <div className="min-h-screen bg-black text-white relative">
-            {/* Global Animated Background - Covers All Pages */}
+            {/* Brutalist Background - Simple Grid Pattern */}
             <div className="fixed inset-0 z-0 w-full h-full">
-              <AnimatedBackground />
-              <div className="absolute inset-0 bg-black/8"></div>
+              <div className="absolute inset-0 bg-black"></div>
+              {/* Grid pattern overlay for brutalist aesthetic */}
+              <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
             </div>
 
           <div className="relative z-10">

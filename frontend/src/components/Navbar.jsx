@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <div className="flex items-center">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center mr-2">
+              <div className="h-8 w-8 rounded-full bg-gradient-to-r from-gray-400 to-gray-600 flex items-center justify-center mr-2">
                 <span className="text-black font-bold text-lg">HK</span>
               </div>
               <span className="text-white font-mono font-bold text-xl hidden sm:block">Harsh Kakadiya</span>
@@ -58,8 +58,8 @@ const Navbar = () => {
                   to={item.path}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     location.pathname === item.path
-                      ? 'bg-cyan-500/20 text-cyan-400'
-                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                      ? 'bg-gray-800/40 text-white'
+                      : 'text-gray-400 hover:bg-gray-900/40 hover:text-white'
                   }`}
                 >
                   {item.name}
@@ -119,8 +119,8 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     location.pathname === item.path
-                      ? 'bg-cyan-500/20 text-cyan-400'
-                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                      ? 'bg-gray-800/40 text-white'
+                      : 'text-gray-400 hover:bg-gray-900/40 hover:text-white'
                   }`}
                 >
                   {item.name}

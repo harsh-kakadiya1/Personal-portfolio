@@ -9,7 +9,7 @@ function getTextColor(theme: string | undefined) {
 }
 
 function getStrokeColor(theme: string | undefined) {
-  return theme === "dark" ? "#00d4aa" : "#0066ff"
+  return theme === "dark" ? "#d1d5db" : "#374151"
 }
 
 interface HeroTextPressureProps {

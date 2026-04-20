@@ -14,7 +14,7 @@ export default function LinkedInCard({ initialPosition = { x: 20, y: 100 } }) {
       onClick={handleClick}
     >
       <motion.div
-        className="w-full h-full bg-gradient-to-br from-blue-900 to-blue-800 border border-blue-600 rounded-lg p-4 cursor-pointer overflow-hidden relative"
+        className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 border border-gray-600 rounded-lg p-4 cursor-pointer overflow-hidden relative"
         whileHover={{ 
           borderColor: '#0077b5',
           boxShadow: '0 0 20px rgba(0, 119, 181, 0.4)'
@@ -41,20 +41,20 @@ export default function LinkedInCard({ initialPosition = { x: 20, y: 100 } }) {
           <div className="text-white font-medium">AI/ML Enthusiast</div>
           <div className="flex items-center gap-2">
             <span className="text-blue-200 text-xs">500+ followers</span>
-            <span className="text-blue-400">•</span>
+            <span className="text-gray-400">•</span>
             <span className="text-blue-200 text-xs">400+ connections</span>
           </div>
         </div>
 
         {/* Hover effect overlay */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent rounded-lg pointer-events-none opacity-0"
+          className="absolute inset-0 bg-gradient-to-br from-gray-400/10 to-transparent rounded-lg pointer-events-none opacity-0"
           whileHover={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         />
 
         {/* Corner decoration */}
-        <div className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-2 right-2 w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
 
         {/* LinkedIn pattern */}
         <div className="absolute bottom-2 right-2 opacity-20">

@@ -15,8 +15,8 @@ const FloatingTerminalButton = () => {
       <motion.button
         onClick={() => navigate('/terminal')}
         className="relative group p-4 rounded-2xl transition-all duration-300
-                 bg-white/5 border border-white/10 shadow-lg shadow-cyan-500/5
-                 hover:bg-white/10 hover:shadow-cyan-500/10 backdrop-blur-xl"
+                 bg-white/5 border border-white/10 shadow-lg shadow-gray-500/5
+                 hover:bg-white/10 hover:shadow-gray-500/10 backdrop-blur-xl"
         whileHover={{ 
           scale: 1.05,
           boxShadow: '0 8px 32px 0 rgba(6, 182, 212, 0.1)'

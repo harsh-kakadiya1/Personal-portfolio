@@ -8,7 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Add your custom colors here if needed
+        // Brutalist black, white, and gray palette
+        'brutal-black': '#000000',
+        'brutal-white': '#ffffff',
+        'brutal-dark-gray': '#1a1a1a',
+        'brutal-gray': '#333333',
+        'brutal-light-gray': '#666666',
+        'brutal-lighter-gray': '#999999',
+        'brutal-pale-gray': '#cccccc',
       },
     },
   },

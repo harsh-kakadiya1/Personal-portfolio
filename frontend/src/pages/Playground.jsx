@@ -62,13 +62,13 @@ export default function Playground() {
       name: "VS CODE",
       description: "My coding sanctuary where ideas transform into reality",
       icon: "",
-      color: "from-blue-500 to-blue-600"
+      color: "from-gray-600 to-gray-700"
     },
     {
       name: "CISCO PKT TRACER",
       description: "Network wizardry and infrastructure simulation mastery",
       icon: "",
-      color: "from-cyan-500 to-cyan-600"
+      color: "from-gray-700 to-gray-600"
     },
     {
       name: "OVERLEAF",
@@ -110,7 +110,7 @@ export default function Playground() {
       name: "TABLEAU",
       description: "Crafting interactive and shareable data visualizations",
       icon: "",
-      color: "from-blue-400 to-blue-500"
+      color: "from-gray-600 to-gray-700"
     },
     {
       name: "MENDELEY",
@@ -122,13 +122,13 @@ export default function Playground() {
       name: "REACT",
       description: "Building interactive UIs with component-based architecture",
       icon: "",
-      color: "from-blue-400 to-blue-500"
+      color: "from-gray-700 to-gray-800"
     },
     {
       name: "FLUTTER",
       description: "Cross-platform mobile framework for building beautiful native apps",
       icon: "",
-      color: "from-cyan-400 to-blue-500"
+      color: "from-gray-600 to-gray-700"
     },
     {
       name: "NODE.JS",
@@ -146,7 +146,7 @@ export default function Playground() {
       name: "UBUNTU",
       description: "Linux powerhouse for development and server deployment",
       icon: "",
-      color: "from-purple-500 to-purple-600"
+      color: "from-gray-700 to-gray-800"
     },
     {
       name: "VERCEL",
@@ -158,13 +158,13 @@ export default function Playground() {
       name: "NETLIFY",
       description: "Seamless continuous deployment and hosting solution",
       icon: "",
-      color: "from-teal-500 to-teal-600"
+      color: "from-gray-700 to-gray-800"
     },
     {
       name: "RENDER",
       description: "Cloud platform for effortless app deployment and scaling",
       icon: "",
-      color: "from-indigo-500 to-indigo-600"
+      color: "from-gray-600 to-gray-700"
     },
     {
       name: "RAILWAY",
@@ -200,7 +200,7 @@ export default function Playground() {
       name: "POSTMAN",
       description: "API development and testing platform for seamless integration",
       icon: "",
-      color: "from-purple-500 to-purple-600"
+      color: "from-gray-700 to-gray-800"
     }
   ];
 
@@ -253,7 +253,7 @@ export default function Playground() {
         >
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="text-cyan-400">GitHub</span> Activity
+              <span className="text-gray-300">GitHub</span> Activity
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               My open-source contributions and development journey
@@ -266,11 +266,11 @@ export default function Playground() {
               <img 
                 src={githubStats.user.avatar} 
                 alt={githubStats.user.name}
-                className="w-24 h-24 rounded-full border-2 border-cyan-500/50 mb-4 md:mb-0 md:mr-6"
+                className="w-24 h-24 rounded-full border-2 border-gray-600/50 mb-4 md:mb-0 md:mr-6"
               />
               <div className="text-center md:text-left">
                 <h2 className="text-2xl font-bold text-white">{githubStats.user.name}</h2>
-                <p className="text-cyan-400 mb-2">@{githubStats.user.username}</p>
+                <p className="text-gray-300 mb-2">@{githubStats.user.username}</p>
                 <p className="text-gray-300 mb-4">{githubStats.user.bio}</p>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function Playground() {
                 whileHover={{ y: -5 }}
                 className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center"
               >
-                <div className="text-3xl font-bold text-cyan-400 mb-2">{value}</div>
+                <div className="text-3xl font-bold text-gray-300 mb-2">{value}</div>
                 <div className="text-sm font-medium text-gray-300 uppercase tracking-wider">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
                 </div>
@@ -346,7 +346,7 @@ export default function Playground() {
         >
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              My <span className="text-cyan-400">Toolkit</span>
+              My <span className="text-gray-300">Toolkit</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               The arsenal of tools and technologies that power my development journey
@@ -374,7 +374,7 @@ export default function Playground() {
                   </div>
                   
                   {/* Tool Name */}
-                  <h3 className="text-white font-bold text-lg mb-3 text-center group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-white font-bold text-lg mb-3 text-center group-hover:text-gray-300 transition-colors">
                     {tool.name}
                   </h3>
                   
@@ -385,10 +385,10 @@ export default function Playground() {
                 </div>
 
                 {/* Hover Border Glow */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-cyan-400/30 transition-colors duration-300" />
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gray-600/30 transition-colors duration-300" />
                 
                 {/* Corner Accent */}
-                <div className="absolute top-3 right-3 w-2 h-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                <div className="absolute top-3 right-3 w-2 h-2 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
               </motion.div>
             ))}
           </div>

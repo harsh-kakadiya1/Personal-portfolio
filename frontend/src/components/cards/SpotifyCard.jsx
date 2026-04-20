@@ -8,7 +8,7 @@ export default function SpotifyCard({ initialPosition = { x: 20, y: 450 } }) {
       className="w-80 h-72"
     >
       <div className="w-full h-full bg-gray-900/90 backdrop-blur-sm rounded-lg p-3">
-        <p className="text-cyan-400 text-xs font-medium mb-2">Current Favorites</p>
+        <p className="text-gray-300 text-xs font-medium mb-2">Current Favorites</p>
         <div className="space-y-3">
           <div className="w-full h-20">
             <iframe 

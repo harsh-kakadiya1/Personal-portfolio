@@ -9,7 +9,7 @@ export default function DraggableCard({
   onLeave,
   onClick,
   isDraggable = true,
-  glowColor = "cyan", 
+  glowColor = "gray", 
   ...props 
 }) {
   const [position, setPosition] = useState(initialPosition);

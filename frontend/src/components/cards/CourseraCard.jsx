@@ -13,12 +13,12 @@ export default function CourseraCard({ initialPosition = { x: 20, y: 250 } }) {
       className="w-80 h-32"
       onClick={handleClick}
     >
-      <div className="w-full h-full bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-4 cursor-pointer border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300">
+      <div className="w-full h-full bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg p-4 cursor-pointer border border-gray-600/30 hover:border-gray-500/50 transition-all duration-300">
         <div className="flex items-center justify-between h-full">
           <div className="flex flex-col justify-center">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-sm">C</span>
+                <span className="text-gray-600 font-bold text-sm">C</span>
               </div>
               <h3 className="text-white font-bold text-lg">Coursera</h3>
             </div>

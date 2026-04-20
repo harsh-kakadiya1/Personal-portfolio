@@ -26,13 +26,13 @@ export const Component = () => {
 
 
       <motion.div
-        className="absolute -left-1/4 -top-1/3 h-[75vh] w-[75vh] rounded-full bg-blue-500/16 blur-3xl"
+        className="absolute -left-1/4 -top-1/3 h-[75vh] w-[75vh] rounded-full bg-gray-500/16 blur-3xl"
         animate={{ x: [0, 90, 20], y: [0, 70, 30], scale: [1, 1.08, 0.98] }}
         transition={blobTransition}
       />
 
       <motion.div
-        className="absolute -right-1/4 top-1/4 h-[70vh] w-[70vh] rounded-full bg-cyan-300/14 blur-3xl"
+        className="absolute -right-1/4 top-1/4 h-[70vh] w-[70vh] rounded-full bg-gray-300/14 blur-3xl"
         animate={{ x: [0, -80, -25], y: [0, 55, -20], scale: [1, 0.94, 1.05] }}
         transition={{ ...blobTransition, duration: 18 }}
       />

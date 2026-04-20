@@ -51,8 +51,8 @@ export default function Research() {
           transition={{ duration: 0.8 }}
           className={`text-center ${isMobile ? 'mb-12' : 'mb-20'}`}
         >
-          <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-bold text-white ${isMobile ? 'mb-4' : 'mb-6'}`}>
-            My <span className="text-cyan-400">Research</span>
+          <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-black text-white ${isMobile ? 'mb-4' : 'mb-6'} uppercase tracking-tighter`}>
+            My <span className="text-gray-300">Research</span>
           </h1>
           <p className={`${isMobile ? 'text-lg' : 'text-2xl'} text-gray-300 ${isMobile ? 'max-w-sm' : 'max-w-3xl'} mx-auto leading-relaxed ${isMobile ? 'px-2' : ''}`}>
             Papers, publications, and research contributions
@@ -67,13 +67,13 @@ export default function Research() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300"
+              className="relative bg-black/40 border-2 border-white/20 p-6 hover:border-white/40 transition-all duration-300"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                <h2 className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-white group-hover:text-cyan-400`}>
+                <h2 className={`${isMobile ? 'text-lg' : 'text-xl'} font-black text-white uppercase tracking-tight group-hover:text-gray-300`}>
                   {item.title}
                 </h2>
-                <span className="text-cyan-400/90 text-sm font-medium shrink-0">
+                <span className="text-gray-300/90 text-sm font-black uppercase tracking-wider shrink-0">
                   {item.year}
                   {item.type && ` · ${item.type}`}
                 </span>
@@ -88,7 +88,7 @@ export default function Research() {
                 <button
                   type="button"
                   onClick={() => setPdfViewerUrl(item.pdf)}
-                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-gray-300 hover:text-white text-sm font-black uppercase tracking-wider"
                 >
                   <FileText className="w-4 h-4" />
                   Read paper
@@ -99,7 +99,7 @@ export default function Research() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-gray-300 hover:text-white text-sm font-black uppercase tracking-wider"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Read / View
@@ -107,7 +107,7 @@ export default function Research() {
               )}
               {item.status && (
                 <div className="absolute bottom-4 right-4">
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${
+                  <span className={`px-2 py-1 text-xs font-black uppercase tracking-wider border ${
                     item.status === 'completed'
                       ? 'bg-green-500/20 text-green-400 border-green-500/30'
                       : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
@@ -128,7 +128,7 @@ export default function Research() {
           >
             <FileText className="w-16 h-16 mx-auto mb-4 opacity-50" />
             <p className="text-lg">Research entries will appear here.</p>
-            <p className="text-sm mt-2">Edit the <code className="text-cyan-400/80">researchItems</code> array in <code className="text-cyan-400/80">src/pages/Research.jsx</code> to add your papers and publications.</p>
+            <p className="text-sm mt-2">Edit the <code className="text-gray-400/80">researchItems</code> array in <code className="text-gray-400/80">src/pages/Research.jsx</code> to add your papers and publications.</p>
           </motion.div>
         )}
       </div>
@@ -142,12 +142,12 @@ export default function Research() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex flex-col bg-black/95"
           >
-            <div className="flex items-center justify-between px-4 py-3 border-b border-white/20 bg-black/50 shrink-0">
-              <span className="text-white font-medium">Read paper</span>
+            <div className="flex items-center justify-between px-4 py-3 border-b-2 border-white/20 bg-black/50 shrink-0">
+              <span className="text-white font-black uppercase tracking-wider">Read paper</span>
               <button
                 type="button"
                 onClick={() => setPdfViewerUrl(null)}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                className="p-2 bg-white/10 hover:bg-white/20 text-white transition-colors"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />

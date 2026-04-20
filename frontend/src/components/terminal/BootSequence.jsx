@@ -119,8 +119,8 @@ export default function BootSequence({ onComplete }) {
         transition={{ duration: 2, ease: "easeOut" }}
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0, 212, 170, 0.2) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(0, 212, 170, 0.2) 2px, transparent 2px)
+            linear-gradient(rgba(107, 114, 128, 0.2) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(107, 114, 128, 0.2) 2px, transparent 2px)
           `,
           backgroundSize: '70px 70px'
         }}
@@ -189,13 +189,13 @@ export default function BootSequence({ onComplete }) {
               <div className="space-y-2">
                 {bootMessages.slice(0, currentLine).map((message, index) => (
                   <div key={index} className="text-green-500">
-                    {message && <span className="text-cyan-400 mr-3">&gt;</span>}
+                    {message && <span className="text-green-400 mr-3">&gt;</span>}
                     {message}
                   </div>
                 ))}
                 {currentLine < bootMessages.length && (
                   <div className="text-green-500">
-                    <span className="text-cyan-400 mr-3">&gt;</span>
+                    <span className="text-green-400 mr-3">&gt;</span>
                     {displayedText}
                   </div>
                 )}
@@ -207,7 +207,7 @@ export default function BootSequence({ onComplete }) {
               animate={{ opacity: bootComplete ? 1 : 0 }}
               className="text-center mt-8"
             >
-              <div className="text-cyan-400 font-mono text-lg animate-pulse bg-cyan-400/10 px-6 py-3 rounded-full border border-cyan-400/30">
+              <div className="text-green-400 font-mono text-lg animate-pulse bg-green-400/10 px-6 py-3 rounded-full border border-green-400/30">
                 Press any key to continue...
               </div>
             </motion.div>

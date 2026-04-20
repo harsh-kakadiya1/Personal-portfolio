@@ -138,10 +138,10 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
   // Get color based on contribution count
   const getColor = (count) => {
     if (count === 0) return 'bg-gray-800';
-    if (count < 3) return 'bg-cyan-500/30';
-    if (count < 8) return 'bg-cyan-500/60';
-    if (count < 12) return 'bg-cyan-500/80';
-    return 'bg-cyan-500';
+    if (count < 3) return 'bg-gray-600/30';
+    if (count < 8) return 'bg-gray-600/60';
+    if (count < 12) return 'bg-gray-600/80';
+    return 'bg-gray-600';
   };
 
   // Get month labels for the year - fixed to prevent duplicates
@@ -192,7 +192,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
       <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
         <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
         <div className="flex justify-center items-center h-32">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-cyan-400"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-400"></div>
           <span className="ml-3 text-gray-400">Loading contribution data...</span>
         </div>
       </div>
@@ -210,7 +210,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
               href={`https://github.com/${username}`} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-cyan-400 hover:underline"
+              className="text-gray-300 hover:underline"
             >
               View on GitHub
             </a>
@@ -234,7 +234,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
               href={`https://github.com/${username}`} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-cyan-400 hover:underline"
+              className="text-gray-300 hover:underline"
             >
               View on GitHub
             </a>
@@ -300,7 +300,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
                     return (
                       <div 
                         key={`day-${day.date}`}
-                        className={`w-4 h-4 rounded-sm ${getColor(count)} ${isToday ? 'ring-2 ring-cyan-400' : ''} transition-all hover:ring-2 hover:ring-gray-400 hover:scale-110 cursor-pointer`}
+                        className={`w-4 h-4 rounded-sm ${getColor(count)} ${isToday ? 'ring-2 ring-gray-400' : ''} transition-all hover:ring-2 hover:ring-gray-300 hover:scale-110 cursor-pointer`}
                         title={`${count} ${count === 1 ? 'contribution' : 'contributions'} on ${date.toLocaleDateString('en-US', { 
                           weekday: 'long', 
                           year: 'numeric', 
@@ -324,10 +324,10 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
               <span className="text-xs">Less</span>
               <div className="flex space-x-1">
                 <div className="w-4 h-4 bg-gray-800 rounded-sm"></div>
-                <div className="w-4 h-4 bg-cyan-500/30 rounded-sm"></div>
-                <div className="w-4 h-4 bg-cyan-500/60 rounded-sm"></div>
-                <div className="w-4 h-4 bg-cyan-500/80 rounded-sm"></div>
-                <div className="w-4 h-4 bg-cyan-500 rounded-sm"></div>
+                <div className="w-4 h-4 bg-gray-600/30 rounded-sm"></div>
+                <div className="w-4 h-4 bg-gray-600/60 rounded-sm"></div>
+                <div className="w-4 h-4 bg-gray-600/80 rounded-sm"></div>
+                <div className="w-4 h-4 bg-gray-600 rounded-sm"></div>
               </div>
               <span className="text-xs">More</span>
             </div>
@@ -338,7 +338,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
               href={`https://github.com/${username}`} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 text-base inline-flex items-center justify-center transition-colors"
+              className="text-gray-300 hover:text-gray-200 text-base inline-flex items-center justify-center transition-colors"
             >
               View full GitHub profile
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

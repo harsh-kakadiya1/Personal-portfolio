@@ -24,7 +24,7 @@ export default function GitHubAchievements({ username = 'harsh-kakadiya1' }) {
         name: 'GitHub Pro',
         badge: {
           text: 'PRO',
-          color: 'from-purple-600 to-purple-500',
+          color: 'from-gray-700 to-gray-600',
           textColor: 'text-white'
         },
         description: 'GitHub Pro subscriber'
@@ -60,7 +60,7 @@ export default function GitHubAchievements({ username = 'harsh-kakadiya1' }) {
       className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8"
     >
       <h3 className="text-2xl font-bold text-white mb-6">
-        <span className="text-cyan-400">Highlights</span>
+        <span className="text-gray-300">Highlights</span>
       </h3>
       
       <div className="space-y-4">
@@ -71,11 +71,11 @@ export default function GitHubAchievements({ username = 'harsh-kakadiya1' }) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{ x: 5 }}
-            className="flex items-center gap-4 p-4 bg-black/20 rounded-xl border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group"
+            className="flex items-center gap-4 p-4 bg-black/20 rounded-xl border border-white/10 hover:border-gray-500/30 transition-all duration-300 group"
           >
             {/* Icon placeholder - using a simple geometric shape instead of emoji */}
-            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-all">
-              <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-700/20 to-gray-600/20 rounded-lg flex items-center justify-center border border-gray-600/30 group-hover:border-gray-500/50 transition-all">
+              <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -83,7 +83,7 @@ export default function GitHubAchievements({ username = 'harsh-kakadiya1' }) {
             {/* Content */}
             <div className="flex-1 flex items-center justify-between">
               <div>
-                <h4 className="text-white font-semibold group-hover:text-cyan-400 transition-colors">
+                <h4 className="text-white font-semibold group-hover:text-gray-300 transition-colors">
                   {highlight.name}
                 </h4>
                 <p className="text-sm text-gray-400">{highlight.description}</p>

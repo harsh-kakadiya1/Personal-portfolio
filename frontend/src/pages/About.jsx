@@ -124,7 +124,7 @@ export default function About() {
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none">
               <span className="text-white">Harsh </span>
-              <span className="text-cyan-400">Kakadiya</span>
+              <span className="text-gray-300">Kakadiya</span>
             </h1>
           </div>
           
@@ -140,9 +140,9 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-20"
         >
-          <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
-              More <span className="text-cyan-400">About Me</span>
+          <div className="bg-black/40 border-2 border-white/20 p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center uppercase tracking-tight">
+              More <span className="text-gray-300">About Me</span>
             </h2>
             <div className="grid md:grid-cols-1 gap-8">
               <div>
@@ -183,7 +183,7 @@ export default function About() {
           >
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                My <span className="text-cyan-400">Education</span>
+                My <span className="text-gray-300">Education</span>
               </h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                 My academic journey and continuous learning path in technology and web development.
@@ -193,8 +193,8 @@ export default function About() {
             {/* Timeline Container */}
             <div className="relative max-w-6xl mx-auto">
               {/* Central Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-cyan-400/30 hidden md:block"></div>
-              <div className="absolute left-4 md:hidden h-full w-0.5 bg-cyan-400/30"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-600/30 hidden md:block"></div>
+              <div className="absolute left-4 md:hidden h-full w-0.5 bg-gray-600/30"></div>
               
               {/* Timeline Items */}
               <div className="space-y-16">
@@ -209,14 +209,14 @@ export default function About() {
                     }`}
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black z-10 hidden md:block"></div>
-                    <div className="absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black z-10 md:hidden"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 hidden md:block"></div>
+                    <div className="absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 md:hidden"></div>
                     
                     {/* Content Card */}
                     <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 pl-12 md:pl-0' : 'md:pl-8 pl-12'}`}>
-                      <div className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/50 transition-all duration-300">
-                        <h3 className="text-xl font-bold text-white mb-2">{edu.degree}</h3>
-                        <p className="text-cyan-400 font-medium mb-1">{edu.institution}</p>
+                      <div className="bg-black/40 border-2 border-white/20 p-6 hover:border-white/40 transition-all duration-300">
+                        <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">{edu.degree}</h3>
+                        <p className="text-gray-300 font-medium mb-1">{edu.institution}</p>
                         <p className="text-gray-400 text-sm mb-3">{edu.year}</p>
                         <p className="text-gray-300 text-sm leading-relaxed">{edu.description}</p>
                       </div>
@@ -236,7 +236,7 @@ export default function About() {
           >
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                My <span className="text-cyan-400">Experience</span>
+                My <span className="text-gray-300">Experience</span>
               </h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                 Professional journey and key projects that shaped my development skills.
@@ -246,8 +246,8 @@ export default function About() {
             {/* Timeline Container */}
             <div className="relative max-w-6xl mx-auto">
               {/* Central Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-cyan-400/30 hidden md:block"></div>
-              <div className="absolute left-4 md:hidden h-full w-0.5 bg-cyan-400/30"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-600/30 hidden md:block"></div>
+              <div className="absolute left-4 md:hidden h-full w-0.5 bg-gray-600/30"></div>
               
               {/* Timeline Items */}
               <div className="space-y-16">
@@ -262,14 +262,14 @@ export default function About() {
                     }`}
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black z-10 hidden md:block"></div>
-                    <div className="absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black z-10 md:hidden"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 hidden md:block"></div>
+                    <div className="absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 md:hidden"></div>
                     
                     {/* Content Card */}
                     <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 pl-12 md:pl-0' : 'md:pl-8 pl-12'}`}>
-                      <div className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:border-cyan-400/50 transition-all duration-300">
-                        <h3 className="text-xl font-bold text-white mb-2">{exp.role}</h3>
-                        <p className="text-cyan-400 font-medium mb-1">{exp.company}</p>
+                      <div className="bg-black/40 border-2 border-white/20 p-6 hover:border-white/40 transition-all duration-300">
+                        <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">{exp.role}</h3>
+                        <p className="text-gray-300 font-medium mb-1">{exp.company}</p>
                         <p className="text-gray-400 text-sm mb-3">{exp.period}</p>
                         <p className="text-gray-300 text-sm leading-relaxed mb-3">{exp.description}</p>
                         {exp.siteUrl && (
@@ -279,7 +279,7 @@ export default function About() {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
-                            className="inline-flex items-center gap-2 rounded-md border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-medium text-cyan-300 transition-colors hover:bg-cyan-500/20 hover:border-cyan-300/60"
+                            className="inline-flex items-center gap-2 border border-gray-600/40 bg-gray-800/10 px-3 py-1.5 text-xs font-black text-gray-300 transition-colors hover:bg-gray-800/20 hover:border-gray-500/60 uppercase tracking-wider"
                           >
                             View Site
                           </motion.a>
@@ -302,14 +302,14 @@ export default function About() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Technologies I <span className="text-cyan-400">Work With</span>
+              Technologies I <span className="text-gray-300">Work With</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               A collection of tools and frameworks I use to build powerful applications
             </p>
           </div>
           
-          <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl p-12 overflow-hidden w-full">
+          <div className="bg-black/40 border-2 border-white/20 p-12 overflow-hidden w-full">
             <LogoLoop
               logos={techLogos}
               speed={50}
@@ -319,7 +319,7 @@ export default function About() {
               hoverSpeed={0}
               scaleOnHover
               ariaLabel="Technology stack"
-              className="text-cyan-400"
+              className="text-gray-300"
             />
           </div>
         </motion.section>
@@ -329,10 +329,10 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-12"
+          className="text-center bg-black/40 border-2 border-white/20 p-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Work <span className="text-cyan-400">Together?</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
+            Ready to Work <span className="text-gray-300">Together?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Let's create something amazing together. I'm always excited to take on new challenges and bring innovative ideas to life.
@@ -346,10 +346,10 @@ export default function About() {
               rel="noopener noreferrer"
               whileHover={{ 
                 scale: 1.05, 
-                boxShadow: "0 0 30px rgba(0, 212, 170, 0.4)" 
+                boxShadow: "0 0 30px rgba(107, 114, 128, 0.2)" 
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-cyan-500/30 hover:border-cyan-400/70 inline-block text-center"
+              className="bg-gray-800/20 border-2 border-gray-600/50 text-white px-8 py-4 font-black text-lg transition-all hover:bg-gray-800/40 hover:border-gray-500/70 inline-block text-center uppercase tracking-wide"
             >
               Hire Me
             </motion.a>
@@ -357,8 +357,8 @@ export default function About() {
               onClick={() => setIsResumeModalOpen(true)}
               whileHover={{ 
                 scale: 1.05, 
-                borderColor: '#00d4aa',
-                color: '#00d4aa'
+                borderColor: '#d1d5db',
+                color: '#d1d5db'
               }}
               whileTap={{ scale: 0.95 }}
               className="bg-black/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-black/40 hover:border-white/50 inline-block text-center"
@@ -374,11 +374,11 @@ export default function About() {
               <span>Available for remote work worldwide</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-cyan-400">⚡</span>
+              <span className="text-gray-400">⚡</span>
               <span>Quick response time</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-purple-400">🕒</span>
+              <span className="text-gray-400">🕒</span>
               <span>Flexible availability</span>
             </div>
           </div>
