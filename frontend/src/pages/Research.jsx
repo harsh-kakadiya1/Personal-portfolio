@@ -40,7 +40,7 @@ export default function Research() {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-white">
       <Navbar />
 
       <div className={`relative z-10 container mx-auto ${isMobile ? 'px-3 py-16 pt-20' : 'px-4 py-24 pt-32'}`}>
@@ -49,39 +49,39 @@ export default function Research() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className={`text-center ${isMobile ? 'mb-12' : 'mb-20'}`}
+          className={`${isMobile ? 'mb-12' : 'mb-20'} border-4 border-black p-8 md:p-12`}
         >
-          <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-black text-white ${isMobile ? 'mb-4' : 'mb-6'} uppercase tracking-tighter`}>
-            My <span className="text-gray-300">Research</span>
+          <h1 className={`${isMobile ? 'text-5xl' : 'text-7xl md:text-8xl'} font-black text-black ${isMobile ? 'mb-4' : 'mb-4'} uppercase tracking-tight leading-none`}>
+            RESEARCH
           </h1>
-          <p className={`${isMobile ? 'text-lg' : 'text-2xl'} text-gray-300 ${isMobile ? 'max-w-sm' : 'max-w-3xl'} mx-auto leading-relaxed ${isMobile ? 'px-2' : ''}`}>
-            Papers, publications, and research contributions
+          <div className="w-32 h-1 bg-accent-red mb-6"></div>
+          <p className={`${isMobile ? 'text-base' : 'text-lg'} text-black font-bold ${isMobile ? 'max-w-sm' : 'max-w-3xl'} leading-relaxed`}>
+            Papers, publications, and research contributions in AI and machine learning
           </p>
         </motion.div>
 
         {/* Research list */}
-        <div className={`max-w-4xl mx-auto ${isMobile ? 'space-y-6' : 'space-y-8'}`}>
+        <div className={`max-w-4xl mx-auto ${isMobile ? 'space-y-4' : 'space-y-6'}`}>
           {researchItems.map((item, index) => (
             <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative bg-black/40 border-2 border-white/20 p-6 hover:border-white/40 transition-all duration-300"
+              className={`border-4 border-black p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-yellow-100'} hover:shadow-lg transition-all duration-300`}
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-                <h2 className={`${isMobile ? 'text-lg' : 'text-xl'} font-black text-white uppercase tracking-tight group-hover:text-gray-300`}>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-2">
+                <h2 className={`${isMobile ? 'text-sm' : 'text-base'} font-black text-black uppercase tracking-tight`}>
                   {item.title}
                 </h2>
-                <span className="text-gray-300/90 text-sm font-black uppercase tracking-wider shrink-0">
-                  {item.year}
-                  {item.type && ` · ${item.type}`}
+                <span className="text-black text-xs font-black uppercase tracking-wider shrink-0 px-3 py-1 bg-accent-red text-white">
+                  {item.year} · {item.type}
                 </span>
               </div>
               {item.venue && (
-                <p className="text-gray-400 text-sm mb-2">{item.venue}</p>
+                <p className="text-gray-600 text-xs mb-1">{item.venue}</p>
               )}
-              <p className="text-gray-300 text-base leading-relaxed mb-4">
+              <p className="text-gray-700 text-xs leading-relaxed mb-3">
                 {item.description}
               </p>
               {item.pdf && (

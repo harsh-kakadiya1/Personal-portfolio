@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+:root {
+  /* Brutalist color palette */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-dark-gray: #1A1A1A;
+  --color-gray: #333333;
+  --color-light-gray: #666666;
+  --color-accent-red: #FF0000;
+  --color-accent-yellow: #FEF9E7;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Account for fixed navbar */
@@ -7,9 +18,87 @@ html {
 
 body {
   margin: 0;
-  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Brutalist Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.875rem, 6vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Brutalist utility classes */
+.bg-accent-red {
+  background-color: #FF0000;
+}
+
+.bg-accent-yellow {
+  background-color: #FEF9E7;
+}
+
+.text-accent-red {
+  color: #FF0000;
+}
+
+.text-accent-yellow {
+  color: #FEF9E7;
+}
+
+.border-accent-red {
+  border-color: #FF0000;
+}
+
+.border-accent-yellow {
+  border-color: #FEF9E7;
+}
+
+.border-brutal {
+  border-width: 4px;
+  border-color: #000000;
+}
+
+.border-brutal-accent-red {
+  border-width: 4px;
+  border-color: #FF0000;
+}
+
+.border-brutal-accent-yellow {
+  border-width: 4px;
+  border-color: #BFFF00;
+}
+
+.border-thin-red {
+  border-bottom: 2px solid #FF0000;
+}
+
+/* Raw geometric elements */
+.section-divider {
+  height: 2px;
+  background: #000000;
+  margin: 2rem 0;
+}
+
+.accent-red-line {
+  height: 3px;
+  background: #FF0000;
+  margin: 1.5rem 0;
 }
 
 /* Custom Cursor Styles */

@@ -72,65 +72,41 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-white">
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 py-24 pt-32 min-h-screen">
+      <div className="relative z-10 px-4 py-16 pt-28 min-h-screen">
         
-        {/* Hero Section */}
+        {/* Hero Section - Centered Brutalist */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 border-4 border-black p-8 md:p-16"
         >
-          {/* Social Stories Profile Picture */}
-          <div className="flex justify-center mb-8">
-            <SocialStories 
-              stories={useMemo(() => [
-                {
-                  id: "1",
-                  platform: "linkedin",
-                  mediaUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-                  linkUrl: "https://www.linkedin.com/in/harsh-kakadiya",
-                  caption: "Building AI-powered solutions and modern web applications",
-                  duration: 5,
-                },
-                {
-                  id: "2",
-                  platform: "linkedin",
-                  mediaUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-                  linkUrl: "https://www.linkedin.com/in/harsh-kakadiya",
-                  caption: "Passionate about Machine Learning and Computer Vision",
-                  duration: 6,
-                },
-                {
-                  id: "3",
-                  platform: "GitHub",
-                  mediaUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
-                  linkUrl: "https://github.com/harsh-kakadiya1",
-                  caption: "Check out my latest projects on GitHub!",
-                  duration: 5,
-                },
-              ], [])}
-              profile={useMemo(() => ({
-                name: "Harsh Kakadiya",
-                avatarUrl: "/images/projects/profile.png",
-              }), [])}
-              defaultDuration={5}
-            />
-          </div>
-          
-          {/* Interactive Name */}
-          <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none">
-              <span className="text-white">Harsh </span>
-              <span className="text-gray-300">Kakadiya</span>
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-black leading-tight mb-4 tracking-tight">
+              HARSH
             </h1>
+            <h2 className="text-4xl md:text-5xl font-black text-accent-red leading-tight mb-6 tracking-tight">
+              KAKADIYA
+            </h2>
+            <div className="w-24 h-1 bg-accent-red mb-8 mx-auto"></div>
+            
+            <p className="text-base md:text-lg font-bold text-black leading-relaxed mb-8">
+              AI Developer and Conversational AI Specialist crafting innovative solutions at the intersection of technology and human needs.
+            </p>
+            
+            <div className="flex gap-3 justify-center flex-wrap">
+              <a href="https://www.linkedin.com/in/harsh-kakadiya" target="_blank" rel="noopener noreferrer"
+                 className="px-4 py-2 bg-black text-white border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-red hover:text-black transition-all">
+                LinkedIn
+              </a>
+              <a href="https://github.com/harsh-kakadiya1" target="_blank" rel="noopener noreferrer"
+                 className="px-4 py-2 bg-white text-black border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-yellow transition-all">
+                GitHub
+              </a>
+            </div>
           </div>
-          
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          AI Developer and Conversational AI & Chatbot Specialist passionate about creating innovative solutions that bridge technology and human needs
-          </p>
         </motion.div>
 
         {/* About Me Section */}
@@ -140,90 +116,73 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-20"
         >
-          <div className="bg-black/40 border-2 border-white/20 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center uppercase tracking-tight">
-              More <span className="text-gray-300">About Me</span>
-            </h2>
-            <div className="grid md:grid-cols-1 gap-8">
-              <div>
-                {/* Site Verification Code */}
-                <div style={{ display: 'none' }}>
-                  Impact-Site-Verification: dbf16cc8-66ad-4289-8598-d4ba255ec555
-                </div>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  They say data is the new oil, and I'm a 3rd-year AI/ML student who's not 
-                  afraid to get my hands dirty. I've spent my time wrangling messy datasets 
-                  and coaxing insights out of them, proving that I'm fluent in both Python 
-                  and the art of convincing a database to behave. 
-                </p>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  My portfolio is a collection of my proudest moments—where I've built models 
-                  that actually work, not just on paper. From predictive analytics to the 
-                  occasional deep learning experiment, I'm here to turn complex problems into 
-                  elegant, and sometimes surprisingly funny, solutions.
-                </p>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, 
-                  or listening to music that fuels my creativity.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {/* Card 1 */}
+            <div className="border-4 border-black p-6 md:p-8 bg-white">
+              <h3 className="text-lg font-black text-black mb-4 uppercase tracking-tight">DATA & AI</h3>
+              <div className="w-8 h-1 bg-accent-red mb-4"></div>
+              <p className="text-sm font-bold text-black leading-relaxed">
+                3rd-year AI/ML student wrangling messy datasets and building models that work beyond paper.
+              </p>
             </div>
+            
+            {/* Card 2 */}
+            <div className="border-4 border-black p-6 md:p-8 bg-accent-yellow">
+              <h3 className="text-lg font-black text-black mb-4 uppercase tracking-tight">DEVELOPMENT</h3>
+              <div className="w-8 h-1 bg-black mb-4"></div>
+              <p className="text-sm font-bold text-black leading-relaxed">
+                Full-stack developer transforming complex problems into elegant, production-ready solutions.
+              </p>
+            </div>
+            
+            {/* Card 3 */}
+            <div className="border-4 border-black p-6 md:p-8 bg-accent-red">
+              <h3 className="text-lg font-black text-white mb-4 uppercase tracking-tight">INNOVATION</h3>
+              <div className="w-8 h-1 bg-white mb-4"></div>
+              <p className="text-sm font-bold text-white leading-relaxed">
+                Exploring new tech, contributing to open source, and building AI-powered products at scale.
+              </p>
+            </div>
+          </div>
+          
+          {/* Site Verification Code */}
+          <div style={{ display: 'none' }}>
+            Impact-Site-Verification: dbf16cc8-66ad-4289-8598-d4ba255ec555
           </div>
         </motion.section>
 
         {/* Education and Experience Centered */}
-        <div className="max-w-4xl mx-auto space-y-16 mb-20">
+        <div className="space-y-20 mb-20">
           
           {/* Education Section */}
           <motion.section
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-20"
           >
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                My <span className="text-gray-300">Education</span>
+            <div className="mb-12 border-b-4 border-black pb-6">
+              <h2 className="text-5xl md:text-6xl font-black text-black mb-2 uppercase tracking-tight">
+                EDUCATION
               </h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                My academic journey and continuous learning path in technology and web development.
-              </p>
+              <div className="w-32 h-1 bg-accent-red"></div>
             </div>
 
             {/* Timeline Container */}
-            <div className="relative max-w-6xl mx-auto">
-              {/* Central Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-600/30 hidden md:block"></div>
-              <div className="absolute left-4 md:hidden h-full w-0.5 bg-gray-600/30"></div>
-              
-              {/* Timeline Items */}
-              <div className="space-y-16">
-                {education.map((edu, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
-                    className={`relative flex items-center ${
-                      index % 2 === 0 ? 'md:justify-start justify-start' : 'md:justify-end justify-start'
-                    }`}
-                  >
-                    {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 hidden md:block"></div>
-                    <div className="absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 md:hidden"></div>
-                    
-                    {/* Content Card */}
-                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 pl-12 md:pl-0' : 'md:pl-8 pl-12'}`}>
-                      <div className="bg-black/40 border-2 border-white/20 p-6 hover:border-white/40 transition-all duration-300">
-                        <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">{edu.degree}</h3>
-                        <p className="text-gray-300 font-medium mb-1">{edu.institution}</p>
-                        <p className="text-gray-400 text-sm mb-3">{edu.year}</p>
-                        <p className="text-gray-300 text-sm leading-relaxed">{edu.description}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="space-y-4">
+              {education.map((edu, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
+                  className="border-l-8 border-black pl-6 py-4"
+                >
+                  <h3 className="text-lg font-black text-black mb-1 uppercase tracking-wider">{edu.degree}</h3>
+                  <p className="text-sm font-bold text-black mb-1">{edu.institution}</p>
+                  <p className="text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">{edu.year}</p>
+                  <p className="text-sm text-black leading-relaxed">{edu.description}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.section>
 
@@ -232,63 +191,40 @@ export default function About() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-20"
           >
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                My <span className="text-gray-300">Experience</span>
+            <div className="mb-12 border-b-4 border-accent-red pb-6">
+              <h2 className="text-5xl md:text-6xl font-black text-black mb-2 uppercase tracking-tight">
+                EXPERIENCE
               </h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Professional journey and key projects that shaped my development skills.
-              </p>
+              <div className="w-32 h-1 bg-black"></div>
             </div>
 
             {/* Timeline Container */}
-            <div className="relative max-w-6xl mx-auto">
-              {/* Central Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-600/30 hidden md:block"></div>
-              <div className="absolute left-4 md:hidden h-full w-0.5 bg-gray-600/30"></div>
-              
-              {/* Timeline Items */}
-              <div className="space-y-16">
-                {experience.map((exp, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
-                    className={`relative flex items-center ${
-                      index % 2 === 0 ? 'md:justify-start justify-start' : 'md:justify-end justify-start'
-                    }`}
-                  >
-                    {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 hidden md:block"></div>
-                    <div className="absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black z-10 md:hidden"></div>
-                    
-                    {/* Content Card */}
-                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 pl-12 md:pl-0' : 'md:pl-8 pl-12'}`}>
-                      <div className="bg-black/40 border-2 border-white/20 p-6 hover:border-white/40 transition-all duration-300">
-                        <h3 className="text-xl font-black text-white mb-2 uppercase tracking-wide">{exp.role}</h3>
-                        <p className="text-gray-300 font-medium mb-1">{exp.company}</p>
-                        <p className="text-gray-400 text-sm mb-3">{exp.period}</p>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-3">{exp.description}</p>
-                        {exp.siteUrl && (
-                          <motion.a
-                            href={exp.siteUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="inline-flex items-center gap-2 border border-gray-600/40 bg-gray-800/10 px-3 py-1.5 text-xs font-black text-gray-300 transition-colors hover:bg-gray-800/20 hover:border-gray-500/60 uppercase tracking-wider"
-                          >
-                            View Site
-                          </motion.a>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="space-y-4">
+              {experience.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
+                  className={`border-4 border-black p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-accent-yellow'}`}
+                >
+                  <h3 className="text-lg font-black text-black mb-1 uppercase tracking-wider">{exp.role}</h3>
+                  <p className="text-sm font-bold text-black mb-1">{exp.company}</p>
+                  <p className="text-xs font-bold text-gray-600 mb-3 uppercase tracking-wider">{exp.period}</p>
+                  <p className="text-sm text-black leading-relaxed mb-4">{exp.description}</p>
+                  {exp.siteUrl && (
+                    <motion.a
+                      href={exp.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black text-white border-3 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-red transition-all"
+                    >
+                      View Site
+                    </motion.a>
+                  )}
+                </motion.div>
+              ))}
             </div>
           </motion.section>
         </div>
@@ -298,18 +234,16 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-20 max-w-8xl mx-auto"
+          className="mb-20"
         >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Technologies I <span className="text-gray-300">Work With</span>
+          <div className="mb-12 border-b-4 border-black pb-6">
+            <h2 className="text-5xl md:text-6xl font-black text-black mb-2 uppercase tracking-tight">
+              TECH STACK
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              A collection of tools and frameworks I use to build powerful applications
-            </p>
+            <div className="w-32 h-1 bg-accent-yellow"></div>
           </div>
           
-          <div className="bg-black/40 border-2 border-white/20 p-12 overflow-hidden w-full">
+          <div className="border-4 border-black p-12 overflow-hidden w-full bg-white">
             <LogoLoop
               logos={techLogos}
               speed={50}
@@ -319,67 +253,53 @@ export default function About() {
               hoverSpeed={0}
               scaleOnHover
               ariaLabel="Technology stack"
-              className="text-gray-300"
+              className="text-black"
             />
           </div>
         </motion.section>
 
-        {/* CTA Section */}
+        {/* CTA Section - Brutalist Grid */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center bg-black/40 border-2 border-white/20 p-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
-            Ready to Work <span className="text-gray-300">Together?</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let's create something amazing together. I'm always excited to take on new challenges and bring innovative ideas to life.
-          </p>
-          
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <motion.a
-              href="https://calendly.com/harshkakadiya128"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ 
-                scale: 1.05, 
-                boxShadow: "0 0 30px rgba(107, 114, 128, 0.2)" 
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gray-800/20 border-2 border-gray-600/50 text-white px-8 py-4 font-black text-lg transition-all hover:bg-gray-800/40 hover:border-gray-500/70 inline-block text-center uppercase tracking-wide"
-            >
-              Hire Me
-            </motion.a>
-            <motion.button
-              onClick={() => setIsResumeModalOpen(true)}
-              whileHover={{ 
-                scale: 1.05, 
-                borderColor: '#d1d5db',
-                color: '#d1d5db'
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-black/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-black/40 hover:border-white/50 inline-block text-center"
-            >
-              View Resume
-            </motion.button>
+          {/* Left - Text */}
+          <div className="border-4 border-black p-8 md:p-12 bg-black text-white">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight leading-tight">
+              LET&apos;S WORK TOGETHER
+            </h2>
+            <p className="text-base font-bold leading-relaxed mb-6">
+              I&apos;m always excited to take on new challenges and bring innovative ideas to life. Let&apos;s create something extraordinary.
+            </p>
+            <div className="flex flex-col gap-3">
+              <motion.a
+                href="https://calendly.com/harshkakadiya128"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-accent-red text-black border-3 border-black font-black text-sm uppercase tracking-wider hover:bg-black hover:text-accent-red transition-all text-center"
+              >
+                Schedule Call
+              </motion.a>
+              <motion.button
+                onClick={() => setIsResumeModalOpen(true)}
+                className="px-6 py-3 bg-accent-yellow text-black border-3 border-black font-black text-sm uppercase tracking-wider hover:bg-black hover:text-accent-yellow transition-all"
+              >
+                Download CV
+              </motion.button>
+            </div>
           </div>
 
-          {/* Availability Info */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-400">
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">🌍</span>
-              <span>Available for remote work worldwide</span>
+          {/* Right - Info Cards */}
+          <div className="flex flex-col gap-4">
+            <div className="border-4 border-black p-6 bg-accent-yellow">
+              <h3 className="text-sm font-black text-black uppercase tracking-wider mb-2">AVAILABILITY</h3>
+              <p className="text-base font-bold text-black">Remote work worldwide, flexible schedule, quick response time.</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-gray-400">⚡</span>
-              <span>Quick response time</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-gray-400">🕒</span>
-              <span>Flexible availability</span>
+            <div className="border-4 border-black p-6 bg-white">
+              <h3 className="text-sm font-black text-black uppercase tracking-wider mb-2">CONTACT</h3>
+              <p className="text-base font-bold text-black">Email • LinkedIn • GitHub • Calendly</p>
             </div>
           </div>
         </motion.section>

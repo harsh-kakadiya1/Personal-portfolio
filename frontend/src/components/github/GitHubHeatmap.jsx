@@ -137,11 +137,11 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
 
   // Get color based on contribution count
   const getColor = (count) => {
-    if (count === 0) return 'bg-gray-800';
-    if (count < 3) return 'bg-gray-600/30';
-    if (count < 8) return 'bg-gray-600/60';
-    if (count < 12) return 'bg-gray-600/80';
-    return 'bg-gray-600';
+    if (count === 0) return 'bg-white border border-black';
+    if (count < 3) return 'bg-yellow-100 border border-black';
+    if (count < 8) return 'bg-accent-yellow border border-black';
+    if (count < 12) return 'bg-black text-white border border-black';
+    return 'bg-accent-red text-white border border-black';
   };
 
   // Get month labels for the year - fixed to prevent duplicates
@@ -189,11 +189,10 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
 
   if (loading) {
     return (
-      <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
-        <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
-        <div className="flex justify-center items-center h-32">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-400"></div>
-          <span className="ml-3 text-gray-400">Loading contribution data...</span>
+      <div className="border-4 border-black p-8 mb-8 bg-accent-yellow">
+        <h3 className="text-lg font-black text-black mb-6 uppercase tracking-tight">GitHub Contributions</h3>
+        <div className="flex justify-center items-center h-16">
+          <span className="text-black font-bold">Loading contribution data...</span>
         </div>
       </div>
     );
@@ -201,16 +200,16 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
 
   if (error) {
     return (
-      <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
-        <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
-        <div className="text-center text-red-400 p-4 bg-red-900/20 rounded-lg">
+      <div className="border-4 border-black p-8 mb-8 bg-white">
+        <h3 className="text-lg font-black text-black mb-6 uppercase tracking-tight">GitHub Contributions</h3>
+        <div className="text-center text-black p-4 border-4 border-black bg-accent-red text-white font-bold">
           <p>{error}</p>
-          <div className="mt-2">
+          <div className="mt-3">
             <a 
               href={`https://github.com/${username}`} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-gray-300 hover:underline"
+              className="text-white underline font-bold"
             >
               View on GitHub
             </a>
@@ -225,16 +224,16 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
   // If no data is available, show a fallback message
   if (!heatmapData || !Array.isArray(heatmapData) || heatmapData.length === 0) {
     return (
-      <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
-        <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
-        <div className="text-center text-gray-400 p-4">
+      <div className="border-4 border-black p-8 mb-8 bg-white">
+        <h3 className="text-lg font-black text-black mb-6 uppercase tracking-tight">GitHub Contributions</h3>
+        <div className="text-center text-black p-4 font-bold">
           <p>No contribution data available</p>
-          <div className="mt-2">
+          <div className="mt-3">
             <a 
               href={`https://github.com/${username}`} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-gray-300 hover:underline"
+              className="text-black underline font-bold"
             >
               View on GitHub
             </a>
@@ -245,24 +244,24 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
   }
 
   return (
-    <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-8 mb-8 max-w-6xl mx-auto">
-      <h3 className="text-2xl font-bold text-white mb-8 text-center">GitHub Contributions</h3>
+    <div className="border-4 border-black p-8 mb-8 max-w-6xl mx-auto bg-white">
+      <h3 className="text-xl font-black text-black mb-8 text-center uppercase tracking-tight">GitHub Contributions</h3>
       
       <div className="flex items-start justify-center">
         {/* Weekday labels */}
-        <div className="flex flex-col mr-3 text-sm text-gray-400 space-y-1 mt-8">
+        <div className="flex flex-col mr-3 text-sm text-black font-bold space-y-1 mt-8">
           <div className="h-4"></div> {/* Empty space for Sunday */}
-          <div className="h-4 flex items-center justify-end pr-2 text-xs">Mon</div>
+          <div className="h-4 flex items-center justify-end pr-2 text-xs">MON</div>
           <div className="h-4"></div> {/* Empty space for Tuesday */}
-          <div className="h-4 flex items-center justify-end pr-2 text-xs">Wed</div>
+          <div className="h-4 flex items-center justify-end pr-2 text-xs">WED</div>
           <div className="h-4"></div> {/* Empty space for Thursday */}
-          <div className="h-4 flex items-center justify-end pr-2 text-xs">Fri</div>
+          <div className="h-4 flex items-center justify-end pr-2 text-xs">FRI</div>
           <div className="h-4"></div> {/* Empty space for Saturday */}
         </div>
         
         <div className="flex-1 max-w-4xl overflow-x-auto" ref={scrollContainerRef}>
           {/* Month labels */}
-          <div className="flex mb-2 text-sm text-gray-400 h-6 relative">
+          <div className="flex mb-2 text-sm text-black font-bold h-6 relative">
             {monthLabels.map((label, index) => (
               <div 
                 key={`${label.month}-${index}`}
