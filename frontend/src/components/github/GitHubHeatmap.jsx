@@ -315,20 +315,20 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
           </div>
           
           {/* Legend */}
-          <div className="flex items-center justify-between mt-6 text-sm text-gray-400">
+          <div className="flex flex-col gap-4 mt-6 text-sm text-gray-400 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-3">
-              <span className="text-xs">Learn how we count contributions</span>
+              <span className="text-xs uppercase tracking-wider">Learn how we count contributions</span>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-xs">Less</span>
+            <div className="flex items-center gap-3 text-black justify-start md:justify-end">
+              <span className="text-xs font-black uppercase tracking-wider">Less</span>
               <div className="flex space-x-1">
-                <div className="w-4 h-4 bg-gray-800 rounded-sm"></div>
-                <div className="w-4 h-4 bg-gray-600/30 rounded-sm"></div>
-                <div className="w-4 h-4 bg-gray-600/60 rounded-sm"></div>
-                <div className="w-4 h-4 bg-gray-600/80 rounded-sm"></div>
-                <div className="w-4 h-4 bg-gray-600 rounded-sm"></div>
+                <div className="w-4 h-4 bg-white border border-black rounded-sm"></div>
+                <div className="w-4 h-4 bg-yellow-100 border border-black rounded-sm"></div>
+                <div className="w-4 h-4 bg-accent-yellow border border-black rounded-sm"></div>
+                <div className="w-4 h-4 bg-black border border-black rounded-sm"></div>
+                <div className="w-4 h-4 bg-accent-red border border-black rounded-sm"></div>
               </div>
-              <span className="text-xs">More</span>
+              <span className="text-xs font-black uppercase tracking-wider">More</span>
             </div>
           </div>
           

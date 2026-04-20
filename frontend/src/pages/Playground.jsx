@@ -251,13 +251,13 @@ export default function Playground() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="max-w-3xl mx-auto">
-            <div className="border-4 border-black p-12 md:p-16 text-center bg-white">
-              <h1 className="text-6xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-tight">
+          <div className="w-full max-w-8xl">
+            <div className="border-4 border-black p-8 md:p-12 text-left bg-white">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-4 uppercase tracking-tight leading-none">
                 GITHUB ACTIVITY
               </h1>
-              <div className="w-32 h-1 bg-accent-red mb-8 mx-auto"></div>
-              <p className="text-base md:text-lg text-black font-bold leading-relaxed">
+              <div className="w-32 h-1 bg-accent-red mb-6"></div>
+              <p className="text-sm md:text-base text-black font-bold leading-relaxed max-w-2xl">
                 My open-source contributions and development journey
               </p>
             </div>
@@ -265,17 +265,24 @@ export default function Playground() {
           <div className="mb-12"></div>
 
           {/* Profile Overview */}
-          <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
-            <div className="flex flex-col md:flex-row items-center">
-              <img 
-                src={githubStats.user.avatar} 
-                alt={githubStats.user.name}
-                className="w-24 h-24 rounded-full border-2 border-gray-600/50 mb-4 md:mb-0 md:mr-6"
-              />
-              <div className="text-center md:text-left">
-                <h2 className="text-2xl font-bold text-white">{githubStats.user.name}</h2>
-                <p className="text-gray-300 mb-2">@{githubStats.user.username}</p>
-                <p className="text-gray-300 mb-4">{githubStats.user.bio}</p>
+          <div className="border-4 border-black bg-white mb-8 p-6 md:p-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              <div className="border-4 border-black bg-accent-yellow p-2 w-28 h-28 shrink-0 mx-auto md:mx-0">
+                <img 
+                  src={githubStats.user.avatar} 
+                  alt={githubStats.user.name}
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl font-black text-black uppercase tracking-tight leading-none">
+                  {githubStats.user.name}
+                </h2>
+                <p className="text-xs font-black text-black uppercase tracking-wider mt-2">@{githubStats.user.username}</p>
+                <div className="w-20 h-1 bg-accent-red my-4 mx-auto md:mx-0"></div>
+                <p className="text-sm md:text-base text-black font-bold leading-relaxed max-w-xl mx-auto md:mx-0">
+                  {githubStats.user.bio}
+                </p>
               </div>
             </div>
           </div>
@@ -346,13 +353,13 @@ export default function Playground() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-20"
         >
-          <div className="max-w-3xl mx-auto">
-            <div className="border-4 border-black p-12 md:p-16 text-center bg-white mb-12">
-              <h1 className="text-6xl md:text-7xl font-black text-black mb-6 uppercase tracking-tight leading-tight">
+          <div className="w-full max-w-8xl">
+            <div className="border-4 border-black p-8 md:p-12 text-left bg-white mb-12">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-4 uppercase tracking-tight leading-none">
                 MY TOOLKIT
               </h1>
-              <div className="w-32 h-1 bg-accent-red mb-8 mx-auto"></div>
-              <p className="text-base md:text-lg text-black font-bold leading-relaxed">
+              <div className="w-32 h-1 bg-accent-red mb-6"></div>
+              <p className="text-sm md:text-base text-black font-bold leading-relaxed max-w-2xl">
                 The arsenal of tools and technologies that power my development journey
               </p>
             </div>

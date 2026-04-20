@@ -435,26 +435,26 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className={`${isMobile ? 'mt-12' : 'mt-20'} text-center bg-black/40 border-2 border-white/20 ${isMobile ? 'p-6' : 'p-12'}`}
+          className={`${isMobile ? 'mt-12' : 'mt-20'} border-4 border-black bg-white ${isMobile ? 'p-6' : 'p-10 md:p-12'}`}
         >
-          <h2 className={`${isMobile ? 'text-2xl' : 'text-4xl md:text-5xl'} font-black text-white ${isMobile ? 'mb-3' : 'mb-6'} uppercase tracking-tight`}>
-            Interested in <span className="text-gray-300">Collaborating?</span>
-          </h2>
-          <p className={`${isMobile ? 'text-base mb-6' : 'text-xl mb-8'} text-gray-300 ${isMobile ? 'max-w-sm' : 'max-w-2xl'} mx-auto`}>
-            Let's build something amazing together. I'm always open to new opportunities and exciting projects.
-          </p>
-          
-          <motion.button
-            onClick={() => navigate('/contact')}
-            whileHover={{ 
-              scale: isMobile ? 1.02 : 1.05, 
-              boxShadow: "0 0 30px rgba(107, 114, 128, 0.2)" 
-            }}
-            whileTap={{ scale: 0.95 }}
-            className={`bg-gray-800/20 border-2 border-gray-600/50 text-white hover:bg-gray-800/40 hover:border-gray-500/70 ${isMobile ? 'px-6 py-3 text-base' : 'px-8 py-4 text-lg'} font-bold uppercase tracking-wide transition-all`}
-          >
-            Get In Touch
-          </motion.button>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className={`${isMobile ? 'text-3xl' : 'text-5xl md:text-6xl'} font-black text-black ${isMobile ? 'mb-3' : 'mb-4'} uppercase tracking-tight leading-none`}>
+              Interested in <span className="text-accent-red">Collaborating?</span>
+            </h2>
+            <div className="w-32 h-1 bg-accent-red mx-auto mb-6"></div>
+            <p className={`${isMobile ? 'text-base mb-6' : 'text-lg mb-8'} text-black font-bold ${isMobile ? 'max-w-sm' : 'max-w-2xl'} mx-auto leading-relaxed`}>
+              Let's build something amazing together. I'm always open to new opportunities and exciting projects.
+            </p>
+
+            <motion.button
+              onClick={() => navigate('/contact')}
+              whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`bg-black text-white border-4 border-black ${isMobile ? 'px-6 py-3 text-base' : 'px-8 py-4 text-lg'} font-black uppercase tracking-wide transition-all hover:bg-accent-red hover:text-black`}
+            >
+              Get In Touch
+            </motion.button>
+          </div>
         </motion.section>
       </div>
       

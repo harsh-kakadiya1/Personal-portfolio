@@ -3,11 +3,15 @@ import { motion } from 'framer-motion';
 import { SocialStories } from '../components/ui/social-stories';
 import LogoLoop from '../components/ui/LogoLoop';
 import BackToTop from '../components/ui/BackToTop';
-import { useResumeModal } from '../contexts/ResumeModalContext';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiDocker, SiGit } from 'react-icons/si';
 
 export default function About() {
-  const { setIsResumeModalOpen } = useResumeModal();
+  const contactLinks = [
+    { label: 'Email', href: 'mailto:harshkakadiya128@gmail.com' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/harsh-kakadiya' },
+    { label: 'GitHub', href: 'https://github.com/harsh-kakadiya1' },
+    { label: 'Calendly', href: 'https://calendly.com/harshkakadiya128' },
+  ];
 
   const education = [
     {
@@ -74,7 +78,7 @@ export default function About() {
   return (
     <div className="min-h-screen relative bg-white">
       {/* Main Content */}
-      <div className="relative z-10 px-4 py-16 pt-28 min-h-screen">
+      <div className="relative z-10 container mx-auto px-4 py-16 pt-28 min-h-screen">
         
         {/* Hero Section - Centered Brutalist */}
         <motion.div
@@ -282,12 +286,13 @@ export default function About() {
               >
                 Schedule Call
               </motion.a>
-              <motion.button
-                onClick={() => setIsResumeModalOpen(true)}
-                className="px-6 py-3 bg-accent-yellow text-black border-3 border-black font-black text-sm uppercase tracking-wider hover:bg-black hover:text-accent-yellow transition-all"
+              <motion.a
+                href="/resume.pdf?v=2026-04-07"
+                download="Harsh_Kakadiya_Resume.pdf"
+                className="px-6 py-3 bg-accent-yellow text-black border-3 border-black font-black text-sm uppercase tracking-wider hover:bg-black hover:text-accent-yellow transition-all text-center"
               >
                 Download CV
-              </motion.button>
+              </motion.a>
             </div>
           </div>
 
@@ -298,9 +303,30 @@ export default function About() {
               <p className="text-base font-bold text-black">Remote work worldwide, flexible schedule, quick response time.</p>
             </div>
             <div className="border-4 border-black p-6 bg-white">
-              <h3 className="text-sm font-black text-black uppercase tracking-wider mb-2">CONTACT</h3>
-              <p className="text-base font-bold text-black">Email • LinkedIn • GitHub • Calendly</p>
+              <h3 className="text-sm font-black text-black uppercase tracking-wider mb-3">CONTACT</h3>
+              <div className="flex flex-wrap gap-2">
+                {contactLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={link.href.startsWith('mailto:') ? '_self' : '_blank'}
+                    rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                    className="px-3 py-2 bg-black text-white border-2 border-black font-black text-xs uppercase tracking-wider hover:bg-accent-red hover:text-black transition-all"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
+
+            {/* <a
+              href="/resume.pdf?v=2026-04-07"
+              download="Harsh_Kakadiya_Resume.pdf"
+              className="border-4 border-black p-6 bg-black text-white font-black no-underline hover:bg-accent-red hover:text-black transition-all text-center block"
+            >
+              <div className="text-base uppercase tracking-tight mb-2">DOWNLOAD CV</div>
+              <div className="text-xs uppercase tracking-wider">PDF resume</div>
+            </a> */}
           </div>
         </motion.section>
       </div>

@@ -68,12 +68,12 @@ export default function Research() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`border-4 border-black p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-yellow-100'} hover:shadow-lg transition-all duration-300`}
+              className={`relative border-4 border-black p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-yellow-100'} hover:shadow-lg transition-all duration-300`}
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-2">
-                <h2 className={`${isMobile ? 'text-sm' : 'text-base'} font-black text-black uppercase tracking-tight`}>
+                <h3 className={`${isMobile ? 'text-base' : 'text-lg md:text-xl'} font-black text-black uppercase tracking-tight leading-tight`}>
                   {item.title}
-                </h2>
+                </h3>
                 <span className="text-black text-xs font-black uppercase tracking-wider shrink-0 px-3 py-1 bg-accent-red text-white">
                   {item.year} · {item.type}
                 </span>
