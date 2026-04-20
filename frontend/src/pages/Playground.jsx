@@ -238,7 +238,7 @@ export default function Playground() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-white">
       {/* Navigation Bar */}
       <Navbar />
       
@@ -251,11 +251,12 @@ export default function Playground() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="text-gray-300">GitHub</span> Activity
+          <div className="border-4 border-black p-8 md:p-12 mb-12">
+            <h1 className="text-6xl md:text-7xl font-black text-black mb-4 uppercase tracking-tight leading-none">
+              GITHUB ACTIVITY
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <div className="w-32 h-1 bg-accent-red mb-6"></div>
+            <p className="text-lg text-black font-bold max-w-2xl">
               My open-source contributions and development journey
             </p>
           </div>
@@ -344,9 +345,9 @@ export default function Playground() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-20"
         >
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              My <span className="text-gray-300">Toolkit</span>
+          <div className="border-4 border-black p-8 md:p-12 mb-12">
+            <h1 className="text-6xl md:text-7xl font-black text-black mb-4 uppercase tracking-tight leading-none">
+              MY TOOLKIT
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               The arsenal of tools and technologies that power my development journey

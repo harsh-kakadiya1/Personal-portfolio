@@ -16,6 +16,25 @@ export default {
         'brutal-light-gray': '#666666',
         'brutal-lighter-gray': '#999999',
         'brutal-pale-gray': '#cccccc',
+        // Accent colors for brutalist design
+        'accent-red': '#FF0000',
+        'accent-yellow': '#BFFF00',
+      },
+      fontSize: {
+        // Extra large sizes for brutalist headings
+        '9xl': '6rem',
+        '10xl': '7rem',
+      },
+      borderWidth: {
+        '3': '3px',
+        '4': '4px',
+        '6': '6px',
+        '8': '8px',
+      },
+      spacing: {
+        '14': '3.5rem',
+        '18': '4.5rem',
+        '22': '5.5rem',
       },
     },
   },

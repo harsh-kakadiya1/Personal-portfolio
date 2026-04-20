@@ -200,7 +200,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-white">
       {/* Navigation Bar */}
       <Navbar />
       
@@ -212,95 +212,77 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className={`text-center ${isMobile ? 'mb-12' : 'mb-20'}`}
+          className={`${isMobile ? 'mb-12' : 'mb-20'} border-4 border-black p-8 md:p-12`}
         >
-          <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl md:text-8xl'} font-black text-white ${isMobile ? 'mb-4' : 'mb-6'} uppercase tracking-tighter`}>
-            My <span className="text-gray-300">Projects</span>
+          <h1 className={`${isMobile ? 'text-5xl' : 'text-7xl md:text-8xl'} font-black text-black ${isMobile ? 'mb-2' : 'mb-4'} uppercase tracking-tight leading-none`}>
+            PROJECTS
           </h1>
-          <p className={`${isMobile ? 'text-lg' : 'text-2xl'} text-gray-300 ${isMobile ? 'max-w-sm' : 'max-w-3xl'} mx-auto leading-relaxed ${isMobile ? 'px-2' : ''}`}>
-            A showcase of my technical journey and creative solutions
+          <div className="w-32 h-1 bg-accent-red mb-6"></div>
+          <p className={`${isMobile ? 'text-base' : 'text-lg'} text-black font-bold ${isMobile ? 'max-w-sm' : 'max-w-2xl'} leading-relaxed`}>
+            A showcase of my technical journey, from AI-powered products to production-ready web applications
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className={`grid ${isMobile ? 'grid-cols-1 gap-6' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'} ${isMobile ? 'max-w-sm mx-auto' : ''}`}>
+        <div className={`grid ${isMobile ? 'grid-cols-1 gap-4' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'} ${isMobile ? 'max-w-sm mx-auto' : ''}`}>
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
               onClick={() => openModal(project)}
-              className={`bg-black/40 border-2 border-white/20 ${isMobile ? 'p-4' : 'p-6'} hover:border-white/40 hover:bg-black/60 transition-all duration-300 group cursor-pointer flex h-full flex-col`}
+              className={`border-4 border-black ${isMobile ? 'p-3' : 'p-4'} hover:bg-accent-yellow transition-all duration-300 group cursor-pointer flex h-full flex-col bg-white`}
             >
               {/* Project Image */}
-              <div className={`${isMobile ? 'h-40 mb-4' : 'h-48 mb-6'} bg-gradient-to-br from-gray-700/20 to-gray-600/20 overflow-hidden relative border border-white/10`}>
+              <div className={`${isMobile ? 'h-32 mb-3' : 'h-40 mb-4'} bg-black overflow-hidden relative border-4 border-black`}>
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
-                {/* Professional / Internship / PyPI badge */}
-                {project.badge && (
-                  <div className={`absolute ${isMobile ? 'top-2 left-2' : 'top-3 left-3'}`}>
-                    <span className={`px-2 py-1 text-xs font-bold uppercase tracking-wider border backdrop-blur-sm ${
-                      project.badge === 'Published PyPI Package'
-                        ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
-                        : 'bg-gray-700/20 text-gray-300 border-gray-600/30'
-                    }`}>
-                      {project.badge}
-                    </span>
-                  </div>
-                )}
-                {/* Status Badge */}
-                <div className={`absolute ${isMobile ? 'top-2 right-2' : 'top-3 right-3'}`}>
-                  <span className={`${
-                    project.status === 'completed' 
-                      ? 'bg-green-500/20 text-green-400 border-green-500/30' 
-                      : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
-                  } px-2 py-1 rounded-full text-xs font-medium border backdrop-blur-sm`}>
-                    {project.status === 'completed' ? '✓ Completed' : '⏳ In Progress'}
-                  </span>
+                {/* Status Badge - Corner */}
+                <div className="absolute top-0 right-0 bg-accent-red text-white px-3 py-2 border-4 border-black text-xs font-black uppercase tracking-wider">
+                  {project.status === 'completed' ? 'DONE' : 'WIP'}
                 </div>
               </div>
 
-              {/* Project Info - short description on card */}
+              {/* Project Info */}
               <div className="flex flex-1 flex-col">
-                <h3 className={`${isMobile ? 'text-lg' : 'text-xl'} font-black text-white ${isMobile ? 'mb-2' : 'mb-3'} group-hover:text-gray-200 transition-colors uppercase tracking-tight`}>
+                <h3 className={`${isMobile ? 'text-sm' : 'text-base'} font-black text-black ${isMobile ? 'mb-2' : 'mb-2'} uppercase tracking-tight line-clamp-2`}>
                   {project.title}
                 </h3>
-                <p className={`text-gray-300 ${isMobile ? 'text-sm mb-3 leading-relaxed' : 'text-base mb-4 leading-relaxed'}`}>
+                
+                <p className={`text-black font-bold ${isMobile ? 'text-xs mb-2 line-clamp-2' : 'text-sm mb-3 line-clamp-2'} leading-tight`}>
                   {project.description}
                 </p>
 
-                {/* Tech Stack */}
-                <div className={`flex flex-wrap gap-2 ${isMobile ? 'mb-4' : 'mb-6'}`}>
-                  {project.tech.map((tech, techIndex) => (
+                {/* Tech Stack - Wrapped */}
+                <div className={`flex flex-wrap gap-1 ${isMobile ? 'mb-3' : 'mb-4'}`}>
+                  {project.tech.slice(0, 3).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className={`bg-gray-700/10 text-gray-300 ${isMobile ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'} border border-gray-600/20 font-bold uppercase text-xs tracking-wider`}
+                      className={`bg-black text-white ${isMobile ? 'px-2 py-0.5 text-xs' : 'px-2 py-1 text-xs'} border-2 border-black font-black uppercase tracking-wider`}
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.tech.length > 3 && (
+                    <span className={`${isMobile ? 'px-2 py-0.5 text-xs' : 'px-2 py-1 text-xs'} font-black`}>+{project.tech.length - 3}</span>
+                  )}
                 </div>
 
-                {/* Action Buttons - stopPropagation so clicking them doesn't open modal */}
-                <div className={`mt-auto flex ${isMobile ? 'flex-col gap-2' : 'gap-4'}`}>
+                {/* Action Buttons */}
+                <div className={`mt-auto flex ${isMobile ? 'gap-1' : 'gap-2'}`}>
                   {project.github !== '#' && (
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-black/20 border-2 border-white/20 text-white px-4 font-bold uppercase tracking-wide transition-all hover:bg-black/40 hover:border-white/40 text-center flex items-center justify-center gap-2`}
+                      className={`flex-1 ${isMobile ? 'py-1 text-xs' : 'py-2 text-xs'} bg-black text-white border-2 border-black font-black uppercase tracking-wider transition-all hover:bg-accent-red text-center flex items-center justify-center`}
                     >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                      </svg>
-                      GitHub
+                      CODE
                     </motion.a>
                   )}
                   {project.live !== '#' && (
@@ -309,14 +291,9 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      whileHover={{ scale: isMobile ? 1.02 : 1.05, boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-gray-800/20 border-2 border-gray-600/50 text-white px-4 font-bold uppercase tracking-wide transition-all hover:bg-gray-800/40 hover:border-gray-500/70 hover:text-gray-200 text-center flex items-center justify-center gap-2 group`}
+                      className={`flex-1 ${isMobile ? 'py-1 text-xs' : 'py-2 text-xs'} bg-accent-yellow text-black border-2 border-black font-black uppercase tracking-wider transition-all hover:bg-black hover:text-accent-yellow text-center flex items-center justify-center`}
                     >
-                      <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      {project.liveLabel || "Live Demo"}
+                      LIVE
                     </motion.a>
                   )}
                 </div>
