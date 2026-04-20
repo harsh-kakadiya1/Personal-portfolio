@@ -8,7 +8,7 @@
   --color-gray: #333333;
   --color-light-gray: #666666;
   --color-accent-red: #FF0000;
-  --color-accent-yellow: #BFFF00;
+  --color-accent-yellow: #FEF9E7;
 }
 
 html {
@@ -50,7 +50,7 @@ h2 {
 }
 
 .bg-accent-yellow {
-  background-color: #BFFF00;
+  background-color: #FEF9E7;
 }
 
 .text-accent-red {
@@ -58,7 +58,7 @@ h2 {
 }
 
 .text-accent-yellow {
-  color: #BFFF00;
+  color: #FEF9E7;
 }
 
 .border-accent-red {
@@ -66,7 +66,7 @@ h2 {
 }
 
 .border-accent-yellow {
-  border-color: #BFFF00;
+  border-color: #FEF9E7;
 }
 
 .border-brutal {
